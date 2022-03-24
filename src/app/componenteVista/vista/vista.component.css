@@ -1,0 +1,53 @@
+
+  
+  
+  html, body , .container {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* For presentation only, no need to copy the code below */
+  
+  .container-fluid * {
+    border: 1px solid red;
+    position: relative;
+    background-color: rgb(118, 238, 238);
+  }
+  .header-fluid{
+  
+  height: auto;
+  width: auto;
+
+  }
+.acerca{
+    
+  
+        height: 600px;
+        width: auto;
+      
+        
+}
+.experiencia{
+
+    height: 600px;
+    width: auto;
+  
+}
+  .educacion{
+
+    height: 600px;
+    width: auto;
+  
+  }  
+  .competencias{
+
+    height: 600px;
+    width: auto;
+  
+  }
+  .proyectos{
+
+    height: 600px;
+    width: auto;
+  
+  }

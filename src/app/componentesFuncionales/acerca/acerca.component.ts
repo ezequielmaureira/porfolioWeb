@@ -11,5 +11,8 @@ export class AcercaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+editarNombre(){
 
+  
+}
 }
