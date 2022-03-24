@@ -2,27 +2,41 @@
    <div class="cabecera"> 
     <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>NOMBRE</span>
  
-<button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg">
+<button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> 
     </button>
   
 
 </div>
+
+</nav>
+
+<div class="body">
+
+    
+    <h1>DESCRIPCION</h1><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+        <i class="fa-solid fa-pen"></i> </button>
+
+   
+  
+   
  
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+
+<!-- Modal Nombre  -->
+<div class="modal fade" id="Modalnombre" tabindex="-1" aria-labelledby="nombreModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="nombreModalLabel">Nombre</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form [formGroup]="formValue"  >
+          <form [formGroup]="formNombre">
             <div class="mb-3">
               <label for="Nombre" class="form-label">Nombre</label>
-              <input type="text" formControlName="Nombre" class="form-control" id="Nombre" aria-describedby="Nombre">
+              <input type="text" formControlName="nombre" class="form-control" id="Nombre" aria-describedby="Nombre">
               <div id="nombre" class="form-text">Debe Agregar nombre</div>
             </div>
              
@@ -39,4 +53,36 @@
     </div>
   </div>
 
-</nav>
+
+<!-- Modal Descripcion  -->
+<div class="modal fade" id="Modaldescripcion" tabindex="-1" aria-labelledby="descripcionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="descripcionModalLabel">Descripcion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formDescripcion">
+            <div class="mb-3">
+              <label for="Descripcion" class="form-label">Descripcion</label>
+              <input type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion">
+              <div id="nombre" class="form-text">Descripcion de su persona</div>
+            </div>
+             
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+          <button type="button" 
+          (click)="actualizarDescripcion()"
+          class="btn btn-primary">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+

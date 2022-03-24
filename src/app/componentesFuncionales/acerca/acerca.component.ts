@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-acerca',
@@ -8,16 +9,45 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./acerca.component.css']
 })
 export class AcercaComponent implements OnInit {
-  formValue!:FormGroup;
+  
+  formNombre!:FormGroup;
+  formDescripcion!:FormGroup;
+
   constructor(private creadorForm:FormBuilder) { }
 
   ngOnInit(): void {
+
+
+    this.formNombre=this.creadorForm.group({
+     
+      nombre:['']
+     
+    })
+
+    this.formDescripcion=this.creadorForm.group({
+     
+      descripcion:['']
+     
+    })
+
+
   }
+  
 editarNombre(){
 
   
 }
 actualizarNombre(){
+
+
+}
+
+  
+editarDescripcion(){
+
+  
+}
+actualizarDescripcion(){
 
 
 }
