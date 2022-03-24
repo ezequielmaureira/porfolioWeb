@@ -11,6 +11,8 @@ import { CompetenciasComponent } from './componentesFuncionales/competencias/com
 import { ProyectosComponent } from './componentesFuncionales/proyectos/proyectos.component';
 import { VistaComponent } from './componenteVista/vista/vista.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { VistaComponent } from './componenteVista/vista/vista.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

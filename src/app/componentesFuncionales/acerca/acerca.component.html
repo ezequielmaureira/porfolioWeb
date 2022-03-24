@@ -2,12 +2,41 @@
    <div class="cabecera"> 
     <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>NOMBRE</span>
  
-<span> <button class="boton" >
+<button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg">
     <i class="fa-solid fa-pen"></i> 
     </button>
-       </span>
+  
 
 </div>
  
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue"  >
+            <div class="mb-3">
+              <label for="Nombre" class="form-label">Nombre</label>
+              <input type="text" formControlName="Nombre" class="form-control" id="Nombre" aria-describedby="Nombre">
+              <div id="nombre" class="form-text">Debe Agregar nombre</div>
+            </div>
+             
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+          <button type="button" 
+          (click)="actualizarNombre()"
+          class="btn btn-primary">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </nav>
