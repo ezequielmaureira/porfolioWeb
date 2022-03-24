@@ -1,20 +1,25 @@
-<nav>
-   <div class="cabecera"> 
-    <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>NOMBRE</span>
- 
-<button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
-    <i class="fa-solid fa-pen"></i> 
-    </button>
+
+  <div class="container-fluid">
   
+  <div class="FOTOS"> 
+    <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>
+      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          <i class="fa-solid fa-pen"></i> 
+          </button> </span>
+        </div>
+        
+        <div class="NOMBRE">
+          <span>NOMBRE</span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+    <i class="fa-solid fa-pen"></i> </button>
+ 
 
-</div>
+  </div>
 
-</nav>
 
-<div class="body">
+<div class="DESCRIPCION">
 
     
-    <h1>DESCRIPCION</h1><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+    <span>DESCRIPCION</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
         <i class="fa-solid fa-pen"></i> </button>
 
    
@@ -23,7 +28,7 @@
  
 
 </div>
-
+</div>
 <!-- Modal Nombre  -->
 <div class="modal fade" id="Modalnombre" tabindex="-1" aria-labelledby="nombreModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -65,9 +70,12 @@
         <div class="modal-body">
           <form [formGroup]="formDescripcion">
             <div class="mb-3">
-              <label for="Descripcion" class="form-label">Descripcion</label>
-              <input type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion">
-              <div id="nombre" class="form-text">Descripcion de su persona</div>
+              <textarea class="form-control" placeholder="Leave a comment here" id="Descripcion" style="height: 100px"
+              formControlName="descripcion"  aria-describedby="Descripcion"
+              
+              ></textarea>
+              
+             
             </div>
              
           </form> 
