@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { PorfolioService } from 'src/app/porfolio.service';
+import { Ifnombre } from './nombre';
 
 
 @Component({
@@ -12,8 +14,8 @@ export class AcercaComponent implements OnInit {
   
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
-
-  constructor(private creadorForm:FormBuilder) { }
+  nombre:Ifnombre;
+  constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 
   ngOnInit(): void {
 
@@ -29,7 +31,7 @@ export class AcercaComponent implements OnInit {
       descripcion:['']
      
     })
-
+    this.mostrarNombre(this.nombre);
 
   }
   
@@ -41,6 +43,15 @@ actualizarNombre(){
 
 
 }
+
+mostrarNombre(nombre:Ifnombre){
+  this.api.obtenerNombre().subscribe(nombre=>{
+
+   this.nombre=nombre;
+  console.log(this.nombre);
+})
+}
+
 
   
 editarDescripcion(){

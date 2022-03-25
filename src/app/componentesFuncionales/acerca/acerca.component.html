@@ -9,10 +9,14 @@
         </div>
         
         <div class="NOMBRE">
-          <span>NOMBRE</span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          <div class="cabecera">
+          <span *ngIf="nombre">
+          {{nombre.nombre}}
+          
+          </span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button>
  
-
+          </div>
   </div>
 
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentesFuncionales/header/header.component';
@@ -10,8 +10,9 @@ import { EducacionComponent } from './componentesFuncionales/educacion/educacion
 import { CompetenciasComponent } from './componentesFuncionales/competencias/competencias.component';
 import { ProyectosComponent } from './componentesFuncionales/proyectos/proyectos.component';
 import { VistaComponent } from './componenteVista/vista/vista.component';
-
+import { PorfolioService } from './porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [PorfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
