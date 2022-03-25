@@ -11,7 +11,7 @@ import { Ifnombre } from './nombre';
   styleUrls: ['./acerca.component.css']
 })
 export class AcercaComponent implements OnInit {
-  
+  formEspecialidad!:FormGroup;
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
   nombre:Ifnombre;
@@ -31,7 +31,15 @@ export class AcercaComponent implements OnInit {
       descripcion:['']
      
     })
+
+    this.formEspecialidad=this.creadorForm.group({
+     
+      descripcion:['']
+     
+    })
+
     this.mostrarNombre(this.nombre);
+    
 
   }
   
@@ -62,4 +70,15 @@ actualizarDescripcion(){
 
 
 }
+  
+editarEspecialidad(){
+
+  
+}
+
+actualizarEspecialidad(){
+
+
+}
+
 }
