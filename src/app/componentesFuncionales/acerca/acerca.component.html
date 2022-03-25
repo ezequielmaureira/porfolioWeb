@@ -1,14 +1,16 @@
 
   <div class="container-fluid">
-  
+  <!--foto -->
   <div class="FOTOS"> 
     <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>
       <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
           <i class="fa-solid fa-pen"></i> 
           </button> </span>
         </div>
-        
-        <div class="NOMBRE">
+   <!--Nombre -->     
+       
+   
+    <div class="NOMBRE">
           <div class="cabecera">
           <span *ngIf="nombre">
           {{nombre.nombre}}
@@ -19,11 +21,25 @@
           </div>
   </div>
 
+  <!--Puesto -->
 
-<div class="DESCRIPCION">
-
+   
+  <div class="ESPECIALIDAD">
+    <div class="cabecera">
+    <span *ngIf="nombre">
+    {{nombre.nombre}}
     
-    <span>DESCRIPCION</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+    </span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+<i class="fa-solid fa-pen"></i> </button>
+
+    </div>
+</div>
+ <!--descripcion -->
+
+
+<div class="DES">
+  
+    <span>DESCRIPCIONA</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
         <i class="fa-solid fa-pen"></i> </button>
 
    
