@@ -29,4 +29,11 @@ export class PorfolioService {
 
 
 }
+
+  
+actualizarEspecialidad(especialidad:any, id:number):Observable<any>{
+   
+  return this.http.put<any>(this.ApiUrl+"/"+id,especialidad)
+
+}
 }

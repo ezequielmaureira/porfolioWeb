@@ -14,7 +14,7 @@ export class AcercaComponent implements OnInit {
   formEspecialidad!:FormGroup;
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
-  eduModelObj:Ifnombre=new Ifnombre();
+  Modelo:Ifnombre=new Ifnombre();
   acercade!:any;  
  
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
@@ -23,6 +23,7 @@ export class AcercaComponent implements OnInit {
   
 
     this.formNombre=this.creadorForm.group({
+    
       id:[''],
       nombre:[''],
      
@@ -41,34 +42,55 @@ export class AcercaComponent implements OnInit {
     })
 
     this.mostrarDatosAcercaDe(this.acercade);
-    
+     }
 
-  }
-  
-
-  
-  editarNombre(row:any){
-    this.eduModelObj.id=row.id;
-    this.formNombre.controls["nombre"].setValue(row.nombre);
-    
  
-
-   
-  
+  editarNombre(n:any){
+    this.Modelo.id=n.id;
+    this.formNombre.controls["nombre"].setValue(n.nombre);
+      
 }
 
-actualizarNombre(nombre:any, id:number){
+actualizarNombre(){
  
-  this.eduModelObj.nombre=this.formNombre.value.nombre;
-  this.api.actualizarNombre(id,nombre).subscribe(data=>{
+  this.Modelo.nombre=this.formNombre.value.nombre;
 
+  this.api.actualizarNombre(this.Modelo,this.Modelo.id).subscribe(data=>{
+
+    let ref=document.getElementById('cancel')
+    ref?.click();
+    this.formNombre.reset(); 
+   this.mostrarDatosAcercaDe(data);
   
   })
- console.log(this.eduModelObj.nombre)
+
 
   }
 
   
+editarEspecialidad(n:any){
+  this.Modelo.id=n.id;
+  this.formEspecialidad.controls["especialidad"].setValue(n.especialidad);
+ 
+      
+}
+
+
+actualizarEspecialidad(){
+ 
+  this.Modelo.especialidad=this.formNombre.value.especialidad;
+
+  this.api.actualizarEspecialidad(this.Modelo,this.Modelo.id).subscribe(data=>{
+
+    let ref=document.getElementById('cancel')
+    ref?.click();
+    this.formEspecialidad.reset(); 
+   this.mostrarDatosAcercaDe(data);
+  
+  })
+
+}
+
 
 
 
@@ -80,27 +102,6 @@ mostrarDatosAcercaDe(name:Ifnombre){
    this.acercade=name;
   console.log(this.acercade);
 })
-}
-
-
-  
-editarDescripcion(){
-
-  
-}
-actualizarDescripcion(){
-
-
-}
-  
-editarEspecialidad(){
-
-  
-}
-
-actualizarEspecialidad(){
-
-
 }
 
 }

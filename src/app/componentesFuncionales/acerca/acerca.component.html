@@ -12,11 +12,11 @@
    
     <div class="NOMBRE">
           <div class="cabecera">
-          <tr *ngFor="let row of acercade" >
-            <td>{{row.id}}</td>
-            <td>{{row.nombre}}</td>
+          <tr *ngFor="let n of acercade" >
+            
+            <td>{{n.nombre}}</td>
           
-          <td><button type="button" (click)="editarNombre(row)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          <td><button type="button" (click)="editarNombre(n)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button></td>
           </tr>
           </div>
@@ -29,11 +29,12 @@
   <div class="ESPECIALIDAD">
     
     
-    <span *ngFor="let n of acercade" >
-      {{n.especialidad}}</span><button type="button" (click)="editarEspecialidad()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
-<i class="fa-solid fa-pen"></i> </button>
-
-   
+    <tr *ngFor="let n of acercade" >
+      <td>{{n.especialidad}}</td>
+    <td><button type="button" (click)="editarEspecialidad(n)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
+<i class="fa-solid fa-pen"></i> </button></td>
+    </tr>
+  
 </div>
  <!--descripcion -->
 
@@ -42,7 +43,7 @@
 
     
   <span *ngFor="let n of acercade" >
-    {{n.descripcion}}</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+    {{n.descripcion}}</span><button type="button" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
         <i class="fa-solid fa-pen"></i> </button>
 
    
@@ -74,7 +75,7 @@
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
        
           <button type="button" 
-          (click)="actualizarNombre(acercade.id,acercade.nombre)"
+          (click)="actualizarNombre()"
           class="btn btn-primary">Actualizar</button>
         </div>
       </div>
@@ -107,7 +108,7 @@
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
        
           <button type="button" 
-          (click)="actualizarDescripcion()"
+         
           class="btn btn-primary">Actualizar</button>
         </div>
       </div>
