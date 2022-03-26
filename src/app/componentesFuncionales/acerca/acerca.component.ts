@@ -20,88 +20,61 @@ export class AcercaComponent implements OnInit {
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 
   ngOnInit(): void {
-  
-
-    this.formNombre=this.creadorForm.group({
-    
-      id:[''],
+      this.formNombre=this.creadorForm.group({   
       nombre:[''],
-     
+        })
+      this.formDescripcion=this.creadorForm.group({     
+      descripcion:['']     
     })
-
-    this.formDescripcion=this.creadorForm.group({
-     
-      descripcion:['']
-     
+    this.formEspecialidad=this.creadorForm.group({      
+      especialidad:['']     
     })
-
-    this.formEspecialidad=this.creadorForm.group({
-     
-      especialidad:['']
-     
-    })
-
     this.mostrarDatosAcercaDe(this.acercade);
      }
 
- 
+
   editarNombre(n:any){
     this.Modelo.id=n.id;
-    this.formNombre.controls["nombre"].setValue(n.nombre);
-      
-}
-
-actualizarNombre(){
- 
+    this.formNombre.controls["nombre"].setValue(n.nombre);      
+                    }
+ actualizarNombre(){ 
   this.Modelo.nombre=this.formNombre.value.nombre;
-
-  this.api.actualizarNombre(this.Modelo,this.Modelo.id).subscribe(data=>{
-
-    let ref=document.getElementById('cancel')
-    ref?.click();
-    this.formNombre.reset(); 
-   this.mostrarDatosAcercaDe(data);
-  
-  })
-
-
-  }
-
-  
-editarEspecialidad(n:any){
+  this.api.actualizarNombre(this.Modelo,this.Modelo.id).subscribe(data=>{       
+  this.mostrarDatosAcercaDe(data);  
+                  })
+                   }  
+ editarEspecialidad(n:any){
   this.Modelo.id=n.id;
-  this.formEspecialidad.controls["especialidad"].setValue(n.especialidad);
- 
-      
-}
-
-
-actualizarEspecialidad(){
- 
-  this.Modelo.especialidad=this.formNombre.value.especialidad;
-
+  this.formEspecialidad.controls["especialidad"].setValue(n.especialidad);   
+  }
+ actualizarEspecialidad(){
+  this.Modelo.especialidad=this.formEspecialidad.value.especialidad;
   this.api.actualizarEspecialidad(this.Modelo,this.Modelo.id).subscribe(data=>{
-
     let ref=document.getElementById('cancel')
     ref?.click();
-    this.formEspecialidad.reset(); 
-   this.mostrarDatosAcercaDe(data);
-  
-  })
-
+   
+  this.mostrarDatosAcercaDe(data);
+})
 }
-
-
-
-
-
-
-mostrarDatosAcercaDe(name:Ifnombre){
-  this.api.obtenerNombre().subscribe(name=>{
-
-   this.acercade=name;
+mostrarDatosAcercaDe(data:Ifnombre){
+  this.api.obtenerAcercaDe().subscribe(data=>{
+  this.acercade=data;
   console.log(this.acercade);
 })
 }
-
+editarDescripcion(n:any){
+  this.Modelo.id=n.id;
+  this.formDescripcion.controls["descripcion"].setValue(n.descripcion);   
 }
+actualizarDescripcion(){
+  this.Modelo.descripcion=this.formDescripcion.value.descripcion;
+  this.api.actualizarDescripcion(this.Modelo,this.Modelo.id).subscribe(data=>{
+  let ref=document.getElementById('cancel')
+  ref?.click();
+   
+  this.mostrarDatosAcercaDe(data);
+})
+}
+}
+
+

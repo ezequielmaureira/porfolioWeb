@@ -14,7 +14,7 @@ export class PorfolioService {
   constructor(private http:HttpClient) { }
 
  
-  obtenerNombre():Observable<Ifnombre>{
+  obtenerAcercaDe():Observable<Ifnombre>{
 
     return this.http.get<Ifnombre>(this.ApiUrl)
     
@@ -24,16 +24,18 @@ export class PorfolioService {
     
   actualizarNombre(nombre:any, id:number):Observable<any>{
    
-    return this.http.put<any>(this.ApiUrl+"/"+id,nombre)
-    
-
-
+    return this.http.put<any>(this.ApiUrl+"/"+id,nombre) 
 }
-
   
 actualizarEspecialidad(especialidad:any, id:number):Observable<any>{
    
   return this.http.put<any>(this.ApiUrl+"/"+id,especialidad)
 
 }
+actualizarDescripcion(descripcion:any, id:number):Observable<any>{
+   
+  return this.http.put<any>(this.ApiUrl+"/"+id,descripcion)
+
+}
+
 }
