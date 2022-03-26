@@ -16,7 +16,7 @@
             <td>{{row.id}}</td>
             <td>{{row.nombre}}</td>
           
-          </span><button type="button" (click)="editarNombre(row)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          </span><button type="button" (click)="editarNombre(row)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button>
  
           </div>
@@ -73,7 +73,7 @@
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
        
           <button type="button" 
-          (click)="actualizarNombre()"
+          (click)="actualizarNombre(acercade.id,acercade.nombre)"
           class="btn btn-primary">Actualizar</button>
         </div>
       </div>

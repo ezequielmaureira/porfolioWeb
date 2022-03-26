@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ifnombre } from './componentesFuncionales/acerca/nombre';
 import { Observable } from 'rxjs';
+import { AcercaComponent } from './componentesFuncionales/acerca/acerca.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,9 @@ export class PorfolioService {
     }
 
     
-  actualizarNombre(data:any, id:number):Observable<any>{
-
-    return this.http.put<any>(this.ApiUrl+"/"+id,data)
+  actualizarNombre(nombre:any, id:number):Observable<any>{
+   
+    return this.http.put<any>(this.ApiUrl+"/"+id,nombre)
     
 
 
