@@ -15,7 +15,9 @@ export class AcercaComponent implements OnInit {
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
   Modelo:Ifnombre=new Ifnombre();
-  acercade!:any;  
+  Nomb:any;
+  Espec:any;
+  Desc:any;  
  
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 
@@ -29,7 +31,9 @@ export class AcercaComponent implements OnInit {
     this.formEspecialidad=this.creadorForm.group({      
       especialidad:['']     
     })
-    this.mostrarDatosAcercaDe(this.acercade);
+    this.mostrarDatosAcercaDe(this.Nomb);
+    this.mostrarDatosAcercaDe(this.Espec);
+    this.mostrarDatosAcercaDe(this.Desc);
      }
 
 
@@ -70,17 +74,21 @@ actualizarDescripcion(){
   this.mostrarDatosAcercaDe(data);
 })
 }
-
 mostrarDatosAcercaDe(data:any){
   this.api.obtenerNombre().subscribe(data=>{
-  this.acercade=data;
-  console.log(this.acercade);
-  this.api.obtenerEspecialidad().subscribe(data=>{
-  this.acercade=data;
-  console.log(this.acercade);
- this.api.obtenerDescripcion().subscribe(data=>{
-  this.acercade=data;
-  console.log(this.acercade);
- })
+  this.Nomb=data;
+  console.log(this.Nomb);
+})
+this.api.obtenerEspecialidad().subscribe(data=>{
+  this.Espec=data;
+  console.log(this.Espec);
+})
+this.api.obtenerDescripcion().subscribe(data=>{
+  this.Desc=data;
+  console.log(this.Desc);
+})
+
 }
- 
+}
+
+

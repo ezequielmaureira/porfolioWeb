@@ -3,23 +3,21 @@
     {
       "id": 1,
       "nombre": "EZEQUIEL dasdasdas",
-      "especialidad": "",
-      "descripcion": ""
+     
     }
   ],
   "Especialidad": [
     {
       "id": 1,
-      "nombre": "EZEQUIEL dasdasdas",
-      "especialidad": "dadasd",
-      "descripcion": ""
+   
+      "especialidad": "dadasd"
+     
     }
   ],
   "Descripcion": [
     {
       "id": 1,
-      "nombre": "EZEQUIEL RENE M",
-      "especialidad": "",
+     
       "descripcion": "EZEQUIEL "
     }
   ]

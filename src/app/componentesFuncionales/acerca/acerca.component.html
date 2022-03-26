@@ -12,7 +12,7 @@
    
     <div class="NOMBRE">
           <div class="cabecera">
-          <tr *ngFor="let n of acercade" >
+          <tr *ngFor="let n of Nomb" >
             
             <td>{{n.nombre}}</td>
           
@@ -29,7 +29,7 @@
   <div class="ESPECIALIDAD">
     
     
-    <tr *ngFor="let n of acercade" >
+    <tr *ngFor="let n of Espec " >
       <td>{{n.especialidad}}</td>
     <td><button type="button" (click)="editarEspecialidad(n)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
 <i class="fa-solid fa-pen"></i> </button></td>
@@ -42,7 +42,7 @@
 <div class="DESCRIPCION">
 
     
-  <tr *ngFor="let n of acercade" >
+  <tr *ngFor="let n of Desc" >
     <td>{{n.descripcion}}</td>
     <td><button type="button" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
         <i class="fa-solid fa-pen"></i> </button></td>
