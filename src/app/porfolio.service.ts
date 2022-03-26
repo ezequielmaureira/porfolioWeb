@@ -8,18 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class PorfolioService {
   
-  datoNombre:Ifnombre;
-  private ApiUrl='http://localhost:4000/nombre';
+  
+  private ApiUrl='http://localhost:4000/acercaDe';
   constructor(private http:HttpClient) { }
 
  
-  obtenerNombre():Observable<any>{
+  obtenerNombre():Observable<Ifnombre>{
 
     return this.http.get<Ifnombre>(this.ApiUrl)
     
       
     }
 
+    
+  actualizarNombre(data:any, id:number):Observable<any>{
+
+    return this.http.put<any>(this.ApiUrl+"/"+id,data)
+    
 
 
+}
 }

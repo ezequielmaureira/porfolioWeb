@@ -12,10 +12,11 @@
    
     <div class="NOMBRE">
           <div class="cabecera">
-          <span *ngIf="nombre">
-          {{nombre.nombre}}
+          <span *ngFor="let row of acercade" >
+            <td>{{row.id}}</td>
+            <td>{{row.nombre}}</td>
           
-          </span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          </span><button type="button" (click)="editarNombre(row)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button>
  
           </div>
@@ -27,7 +28,8 @@
   <div class="ESPECIALIDAD">
     
     
-    <span *ngIf="nombre">  {{nombre.nombre}}</span><button type="button" (click)="editarNombre()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+    <span *ngFor="let n of acercade" >
+      {{n.especialidad}}</span><button type="button" (click)="editarEspecialidad()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
 <i class="fa-solid fa-pen"></i> </button>
 
    
@@ -38,7 +40,8 @@
 <div class="DESCRIPCION">
 
     
-    <span>DESCRIPCION</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+  <span *ngFor="let n of acercade" >
+    {{n.descripcion}}</span><button type="button" (click)="editarDescripcion()" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
         <i class="fa-solid fa-pen"></i> </button>
 
    
@@ -61,7 +64,7 @@
             <div class="mb-3">
               <label for="Nombre" class="form-label">Nombre</label>
               <input type="text" formControlName="nombre" class="form-control" id="Nombre" aria-describedby="Nombre">
-              <div id="nombre" class="form-text">Debe Agregar nombre</div>
+              <div id="nombre" class="form-text">Debe Agregar su Nombre</div>
             </div>
              
           </form> 
@@ -89,7 +92,7 @@
         <div class="modal-body">
           <form [formGroup]="formDescripcion">
             <div class="mb-3">
-              <textarea class="form-control" placeholder="Leave a comment here" id="Descripcion" style="height: 100px"
+              <textarea class="form-control" placeholder="Describa en forma breve su perfil de programador" id="Descripcion" style="height: 100px"
               formControlName="descripcion"  aria-describedby="Descripcion"
               
               ></textarea>
@@ -118,13 +121,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="EspecialidadModalLabel">Especialidad></h5>
+        <h5 class="modal-title" id="EspecialidadModalLabel">Especialidad</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="formEspecialidad">
           <div class="mb-3">
-            <label for="Especialidad" class="form-label">Especialidad</label>
+            <label for="Especialidad" class="form-label"></label>
             <input type="text" formControlName="especialidad" class="form-control" id="Especialidad" aria-describedby="Especialidad">
             <div id="especialidad" class="form-text">Debe Agregar su especialidad</div>
           </div>

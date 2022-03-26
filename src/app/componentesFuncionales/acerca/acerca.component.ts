@@ -14,11 +14,13 @@ export class AcercaComponent implements OnInit {
   formEspecialidad!:FormGroup;
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
-  nombre:Ifnombre;
+  eduModelObj:any;
+  acercade!:any;
+ 
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 
   ngOnInit(): void {
-
+  
 
     this.formNombre=this.creadorForm.group({
      
@@ -34,29 +36,48 @@ export class AcercaComponent implements OnInit {
 
     this.formEspecialidad=this.creadorForm.group({
      
-      descripcion:['']
+      especialidad:['']
      
     })
 
-    this.mostrarNombre(this.nombre);
+    this.mostrarDatosAcercaDe(this.acercade);
     
 
   }
   
-editarNombre(){
+editarNombre(row:any){
+  
+   this.eduModelObj.id=row.id;
+   this.formNombre.controls["nombre"].setValue(row.nombre);
 
   
 }
+
 actualizarNombre(){
+
+  this.eduModelObj.nombre=this.formNombre.value.nombre;
+
+  this.api.actualizarNombre(this.eduModelObj,this.eduModelObj.id)
+  .subscribe(res=>{
+  
+   let ref=document.getElementById('cancel')
+   ref?.click();
+   this.formNombre.reset(); 
+  this.mostrarDatosAcercaDe(res);
+  
+  
+  })
+  
+
 
 
 }
 
-mostrarNombre(nombre:Ifnombre){
-  this.api.obtenerNombre().subscribe(nombre=>{
+mostrarDatosAcercaDe(name:Ifnombre){
+  this.api.obtenerNombre().subscribe(name=>{
 
-   this.nombre=nombre;
-  console.log(this.nombre);
+   this.acercade=name;
+  console.log(this.acercade);
 })
 }
 

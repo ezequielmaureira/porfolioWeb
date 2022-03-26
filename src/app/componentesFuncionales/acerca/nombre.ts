@@ -1,6 +1,9 @@
-export interface Ifnombre{
+export class Ifnombre{
 
-nombre:string;
+id:number=0;
+nombre:string='';
+especialidad:string='';
+descripcion:string='';
 
 
 
