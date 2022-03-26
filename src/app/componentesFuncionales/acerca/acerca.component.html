@@ -29,9 +29,9 @@
   <div class="ESPECIALIDAD">
     
     
-    <tr *ngFor="let n of Espec " >
-      <td>{{n.especialidad}}</td>
-    <td><button type="button" (click)="editarEspecialidad(n)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
+    <tr *ngFor="let i of Espec " >
+      <td>{{i.especialidad}}</td>
+    <td><button type="button" (click)="editarEspecialidad(i)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
 <i class="fa-solid fa-pen"></i> </button></td>
     </tr>
   
