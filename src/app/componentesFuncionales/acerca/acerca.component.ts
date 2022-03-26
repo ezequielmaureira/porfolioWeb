@@ -73,15 +73,19 @@ editarDescripcion(n:any){
   this.ModeloDescripcion.id=n.id;
   this.formDescripcion.controls["descripcion"].setValue(n.descripcion);   
 }
-actualizarDescripcion(){
+actualizarDesc(){
   this.ModeloDescripcion.descripcion=this.formDescripcion.value.descripcion;
   this.api.actualizarDescripcion(this.ModeloDescripcion,this.ModeloDescripcion.id).subscribe(data=>{
-  let ref=document.getElementById('cancel')
-  ref?.click();
+    let ref=document.getElementById('cancel')
+    ref?.click();
+    this.mostrarDatosNombre(this.Nomb);
+    this.mostrarDatosEspecialidad(this.Espec);
+    this.mostrarDatosDescripcion(this.Desc);
    
- ;
 })
 }
+
+
 mostrarDatosNombre(data:any){
   this.api.obtenerNombre().subscribe(data=>{
   this.Nomb=data;

@@ -2,19 +2,19 @@
   "Nombre": [
     {
       "id": 1,
-      "nombre": "NADIA SOLEDAD GALARZAdasdas"
+      "nombre": "Ezequiel Rene Maureira"
     }
   ],
   "Especialidad": [
     {
       "id": 1,
-      "especialidad": "dadads"
+      "especialidad": "Programador Junior "
     }
   ],
   "Descripcion": [
     {
       "id": 1,
-      "descripcion": "EZEQUIEL "
+      "descripcion": "Entre sus competencias está: Diseñar, producir o mantener (programar, adaptar e integrar) componentes o subconjuntos de software (clases, módulos, pantallas, rutinas, subsistemas, programas en general) conforme a especificaciones (funcionales y técnicas) para ser integrados en aplicaciones."
     }
   ]
 }

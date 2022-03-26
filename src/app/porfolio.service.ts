@@ -43,10 +43,11 @@ actualizarEspecialidad(especialidad:any, id:number):Observable<any>{
   return this.http.put<any>(this.ApiUrlEspecialidad+"/"+id,especialidad)
 
 }
+   
 actualizarDescripcion(descripcion:any, id:number):Observable<any>{
    
-  return this.http.put<any>(this.ApiUrlDescripcion+"/"+id,descripcion)
-
+  return this.http.put<any>(this.ApiUrlDescripcion+"/"+id,descripcion) 
 }
 
 }
+
