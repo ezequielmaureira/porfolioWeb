@@ -23,7 +23,7 @@ export class AcercaComponent implements OnInit {
   
 
     this.formNombre=this.creadorForm.group({
-     
+      id:[''],
       nombre:[''],
      
     })
