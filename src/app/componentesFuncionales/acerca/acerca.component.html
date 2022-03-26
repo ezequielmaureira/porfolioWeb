@@ -11,7 +11,7 @@
        
    
     <div class="NOMBRE">
-          <div class="cabecera">
+          
           <tr *ngFor="let n of Nomb" >
             
             <td>{{n.nombre}}</td>
@@ -19,14 +19,14 @@
           <td><button type="button" (click)="editarNombre(n)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button></td>
           </tr>
-          </div>
+         
           
   </div>
 
   <!--Especialidad-->
 
   <div class="ESPECIALIDAD">
-    <div class="cabecera">
+  
     <tr *ngFor="let n of Desc" >
       
       <td>{{n.especialidad}}</td>
@@ -34,7 +34,7 @@
     <td><button type="button" (click)="editarEspecialidad(n)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
 <i class="fa-solid fa-pen"></i> </button></td>
     </tr>
-    </div>
+   
     
 </div>
  <!--descripcion -->
