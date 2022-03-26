@@ -2,6 +2,8 @@ import { Component, OnInit,Input } from '@angular/core';
 import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { PorfolioService } from 'src/app/porfolio.service';
+import { Ifdescripcion } from './descripcion';
+import { Ifespecialidad } from './especialidad';
 import { Ifnombre } from './nombre';
 
 
@@ -14,7 +16,9 @@ export class AcercaComponent implements OnInit {
   formEspecialidad!:FormGroup;
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
-  Modelo:Ifnombre=new Ifnombre();
+  ModeloNombre:Ifnombre=new Ifnombre();
+  ModeloEspecialidad:Ifespecialidad=new Ifespecialidad();
+  ModeloDescripcion:Ifdescripcion=new Ifdescripcion();
   Nomb:any;
   Espec:any;
   Desc:any;  
@@ -38,22 +42,22 @@ export class AcercaComponent implements OnInit {
 
 
   editarNombre(n:any){
-    this.Modelo.id=n.id;
+    this.ModeloNombre.id=n.id;
     this.formNombre.controls["nombre"].setValue(n.nombre);      
                     }
  actualizarNombre(){ 
-  this.Modelo.nombre=this.formNombre.value.nombre;
-  this.api.actualizarNombre(this.Modelo,this.Modelo.id).subscribe(data=>{       
+  this.ModeloNombre.nombre=this.formNombre.value.nombre;
+  this.api.actualizarNombre(this.ModeloNombre,this.ModeloNombre.id).subscribe(data=>{       
   this.mostrarDatosAcercaDe(data);  
                   })
                    }  
  editarEspecialidad(n:any){
-  this.Modelo.id=n.id;
+  this.ModeloEspecialidad.id=n.id;
   this.formEspecialidad.controls["especialidad"].setValue(n.especialidad);   
   }
  actualizarEspecialidad(){
-  this.Modelo.especialidad=this.formEspecialidad.value.especialidad;
-  this.api.actualizarEspecialidad(this.Modelo,this.Modelo.id).subscribe(data=>{
+  this.ModeloEspecialidad.especialidad=this.formEspecialidad.value.especialidad;
+  this.api.actualizarEspecialidad(this.ModeloEspecialidad,this.ModeloEspecialidad.id).subscribe(data=>{
     let ref=document.getElementById('cancel')
     ref?.click();
    
@@ -62,12 +66,12 @@ export class AcercaComponent implements OnInit {
 }
 
 editarDescripcion(n:any){
-  this.Modelo.id=n.id;
+  this.ModeloDescripcion.id=n.id;
   this.formDescripcion.controls["descripcion"].setValue(n.descripcion);   
 }
 actualizarDescripcion(){
-  this.Modelo.descripcion=this.formDescripcion.value.descripcion;
-  this.api.actualizarDescripcion(this.Modelo,this.Modelo.id).subscribe(data=>{
+  this.ModeloDescripcion.descripcion=this.formDescripcion.value.descripcion;
+  this.api.actualizarDescripcion(this.ModeloDescripcion,this.ModeloDescripcion.id).subscribe(data=>{
   let ref=document.getElementById('cancel')
   ref?.click();
    

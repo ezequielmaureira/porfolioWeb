@@ -1,4 +1,11 @@
-export interface Ifdescripcion{
+export class Ifdescripcion{
 
-    descripcion:string;
-}
+    id:number=0;
+    descripcion:string="";
+    
+    
+    
+    
+    }
+    
+    

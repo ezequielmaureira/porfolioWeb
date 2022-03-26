@@ -2,22 +2,18 @@
   "Nombre": [
     {
       "id": 1,
-      "nombre": "EZEQUIEL dasdasdas",
-     
+      "nombre": "eze"
     }
   ],
   "Especialidad": [
     {
       "id": 1,
-   
-      "especialidad": "dadasd"
-     
+      "especialidad": "dasdas"
     }
   ],
   "Descripcion": [
     {
       "id": 1,
-     
       "descripcion": "EZEQUIEL "
     }
   ]
