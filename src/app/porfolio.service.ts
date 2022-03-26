@@ -23,12 +23,12 @@ export class PorfolioService {
     }
     obtenerEspecialidad():Observable<any>{
 
-      return this.http.get<any>(this.ApiUrlDescripcion)
+      return this.http.get<any>(this.ApiUrlEspecialidad)
             
       }
     obtenerDescripcion():Observable<any>{
 
-      return this.http.get<any>(this.ApiUrlEspecialidad)
+      return this.http.get<any>(this.ApiUrlDescripcion)
             
       }
 
