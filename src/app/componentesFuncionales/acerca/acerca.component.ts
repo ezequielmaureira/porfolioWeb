@@ -35,9 +35,9 @@ export class AcercaComponent implements OnInit {
     this.formEspecialidad=this.creadorForm.group({      
       especialidad:['']     
     })
-    this.mostrarDatosAcercaDe(this.Nomb);
-    this.mostrarDatosAcercaDe(this.Espec);
-    this.mostrarDatosAcercaDe(this.Desc);
+    this.mostrarDatosNombre(this.Nomb);
+    this.mostrarDatosEspecialidad(this.Espec);
+    this.mostrarDatosDescripcion(this.Desc);
      }
 
 
@@ -48,20 +48,24 @@ export class AcercaComponent implements OnInit {
  actualizarNombre(){ 
   this.ModeloNombre.nombre=this.formNombre.value.nombre;
   this.api.actualizarNombre(this.ModeloNombre,this.ModeloNombre.id).subscribe(data=>{       
-  this.mostrarDatosAcercaDe(data);  
+    this.mostrarDatosNombre(this.Nomb);
+    this.mostrarDatosEspecialidad(this.Espec);
+    this.mostrarDatosDescripcion(this.Desc);
                   })
                    }  
- editarEspecialidad(n:any){
-  this.ModeloEspecialidad.id=n.id;
-  this.formEspecialidad.controls["especialidad"].setValue(n.especialidad);   
+ editarEspecialidad(i:any){
+  this.ModeloEspecialidad.id=i.id;
+  this.formEspecialidad.controls["especialidad"].setValue(i.especialidad);   
   }
  actualizarEspecialidad(){
   this.ModeloEspecialidad.especialidad=this.formEspecialidad.value.especialidad;
   this.api.actualizarEspecialidad(this.ModeloEspecialidad,this.ModeloEspecialidad.id).subscribe(data=>{
     let ref=document.getElementById('cancel')
     ref?.click();
+    this.mostrarDatosNombre(this.Nomb);
+    this.mostrarDatosEspecialidad(this.Espec);
+    this.mostrarDatosDescripcion(this.Desc);
    
-  this.mostrarDatosAcercaDe(data);
 })
 }
 
@@ -75,20 +79,25 @@ actualizarDescripcion(){
   let ref=document.getElementById('cancel')
   ref?.click();
    
-  this.mostrarDatosAcercaDe(data);
+ ;
 })
 }
-mostrarDatosAcercaDe(data:any){
+mostrarDatosNombre(data:any){
   this.api.obtenerNombre().subscribe(data=>{
   this.Nomb=data;
   console.log(this.Nomb);
 })
-this.api.obtenerEspecialidad().subscribe(data=>{
-  this.Espec=data;
+}
+mostrarDatosEspecialidad(data1:any){
+
+this.api.obtenerEspecialidad().subscribe(data1=>{
+  this.Espec=data1;
   console.log(this.Espec);
 })
-this.api.obtenerDescripcion().subscribe(data=>{
-  this.Desc=data;
+}
+mostrarDatosDescripcion(data2:any){
+this.api.obtenerDescripcion().subscribe(data2=>{
+  this.Desc=data2;
   console.log(this.Desc);
 })
 
