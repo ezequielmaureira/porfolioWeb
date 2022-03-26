@@ -27,7 +27,7 @@
 
   <div class="ESPECIALIDAD">
   
-    <tr *ngFor="let n of Desc" >
+    <tr *ngFor="let n of Espec" >
       
       <td>{{n.especialidad}}</td>
     
@@ -85,38 +85,6 @@
   </div>
 
 
-<!-- Modal Descripcion  -->
-<div class="modal fade" id="Modaldescripcion" tabindex="-1" aria-labelledby="descripcionModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="descripcionModalLabel">Descripcion</h5>
-         
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="formDescripcion">
-            <div class="mb-3">
-              <textarea class="form-control" placeholder="Describa en forma breve su perfil de programador" id="Descripcion" style="height: 100px"
-              formControlName="descripcion"  aria-describedby="Descripcion"
-              
-              ></textarea>
-              
-             
-            </div>
-             
-          </form> 
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-       
-          <button type="button" (click)="actualizarDescripcion()"
-         
-          class="btn btn-primary">Actualizar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   
 
@@ -143,6 +111,37 @@
      
         <button type="button" 
         (click)="actualizarEspecialidad()"
+        class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal Descripcion  -->
+<div class="modal fade" id="Modaldescripcion" tabindex="-1" aria-labelledby="DescripcionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DescripcionModalLabel">Especialidad</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formDescripcion">
+          <div class="mb-3">
+            <label for="Descripcion" class="form-label"></label>
+            <input type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion">
+            <div id="descripcion" class="form-text">Debe Agregar su Descripcion</div>
+          </div>
+           
+        </form> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+     
+        <button type="button" 
+        (click)="actualizarDescripcion()"
         class="btn btn-primary">Actualizar</button>
       </div>
     </div>

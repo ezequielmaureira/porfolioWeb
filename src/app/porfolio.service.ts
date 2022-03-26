@@ -16,7 +16,7 @@ export class PorfolioService {
   constructor(private http:HttpClient) { }
 
  
-  obtenerNombre():Observable<any>{
+    obtenerNombre():Observable<any>{
 
     return this.http.get<any>(this.ApiUrlNombre)
           
