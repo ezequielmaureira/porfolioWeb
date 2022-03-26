@@ -1,10 +1,22 @@
 {
-  "acercaDe": [
+  "Nombre": [
     {
       "id": 1,
-      "nombre": "deadea",
+      "nombre": "ezequiel ",
       "especialidad": "",
       "descripcion": ""
+    }
+  ],
+  "Especialidad": [
+    {
+      "id": 1,
+      "especialidad": "dads",
+        }
+  ],
+  "Descripcion": [
+    {
+      "id": 1,
+       "descripcion": ""
     }
   ]
 }

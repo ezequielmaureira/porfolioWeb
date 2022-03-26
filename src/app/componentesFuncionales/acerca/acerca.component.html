@@ -42,10 +42,11 @@
 <div class="DESCRIPCION">
 
     
-  <span *ngFor="let n of acercade" >
-    {{n.descripcion}}</span><button type="button" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
-        <i class="fa-solid fa-pen"></i> </button>
-
+  <tr *ngFor="let n of acercade" >
+    <td>{{n.descripcion}}</td>
+    <td><button type="button" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
+        <i class="fa-solid fa-pen"></i> </button></td>
+  </tr>
    
   
    
@@ -89,7 +90,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="descripcionModalLabel">Descripcion</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
         </div>
         <div class="modal-body">
           <form [formGroup]="formDescripcion">
@@ -107,7 +108,7 @@
         <div class="modal-footer">
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
        
-          <button type="button" 
+          <button type="button" (click)="actualizarDescripcion()"
          
           class="btn btn-primary">Actualizar</button>
         </div>
