@@ -2,7 +2,7 @@
   "Nombre": [
     {
       "id": 1,
-      "nombre": "ezequiel ",
+      "nombre": "EZEQUIEL dasdasdas",
       "especialidad": "",
       "descripcion": ""
     }
@@ -10,13 +10,17 @@
   "Especialidad": [
     {
       "id": 1,
-      "especialidad": "dads",
-        }
+      "nombre": "EZEQUIEL dasdasdas",
+      "especialidad": "dadasd",
+      "descripcion": ""
+    }
   ],
   "Descripcion": [
     {
       "id": 1,
-       "descripcion": ""
+      "nombre": "EZEQUIEL RENE M",
+      "especialidad": "",
+      "descripcion": "EZEQUIEL "
     }
   ]
 }

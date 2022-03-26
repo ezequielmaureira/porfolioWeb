@@ -56,12 +56,7 @@ export class AcercaComponent implements OnInit {
   this.mostrarDatosAcercaDe(data);
 })
 }
-mostrarDatosAcercaDe(data:Ifnombre){
-  this.api.obtenerAcercaDe().subscribe(data=>{
-  this.acercade=data;
-  console.log(this.acercade);
-})
-}
+
 editarDescripcion(n:any){
   this.Modelo.id=n.id;
   this.formDescripcion.controls["descripcion"].setValue(n.descripcion);   
@@ -75,6 +70,19 @@ actualizarDescripcion(){
   this.mostrarDatosAcercaDe(data);
 })
 }
+mostrarDatosAcercaDe(data:any){
+  this.api.obtenerNombre().subscribe(data=>{
+  this.acercade=data;
+  console.log(this.acercade);
+  this.api.obtenerEspecialidad().subscribe(data=>{
+  this.acercade=data;
+  console.log(this.acercade);
+ this.api.obtenerDescripcion().subscribe(data=>{
+  this.acercade=data;
+  console.log(this.acercade);
+
+})
 }
+
 
 

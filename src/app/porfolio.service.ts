@@ -16,12 +16,21 @@ export class PorfolioService {
   constructor(private http:HttpClient) { }
 
  
-  obtenerAcercaDe():Observable<Ifnombre>{
+  obtenerNombre():Observable<any>{
 
-    return this.http.get<Ifnombre>(this.ApiUrlNombre)
-    
-      
+    return this.http.get<any>(this.ApiUrlNombre)
+          
     }
+    obtenerEspecialidad():Observable<any>{
+
+      return this.http.get<any>(this.ApiUrlDescripcion)
+            
+      }
+    obtenerDescripcion():Observable<any>{
+
+      return this.http.get<any>(this.ApiUrlEspecialidad)
+            
+      }
 
     
   actualizarNombre(nombre:any, id:number):Observable<any>{
