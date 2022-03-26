@@ -70,6 +70,7 @@ actualizarDescripcion(){
   this.mostrarDatosAcercaDe(data);
 })
 }
+
 mostrarDatosAcercaDe(data:any){
   this.api.obtenerNombre().subscribe(data=>{
   this.acercade=data;
@@ -80,9 +81,6 @@ mostrarDatosAcercaDe(data:any){
  this.api.obtenerDescripcion().subscribe(data=>{
   this.acercade=data;
   console.log(this.acercade);
-
-})
+ })
 }
-
-
-
+ 
