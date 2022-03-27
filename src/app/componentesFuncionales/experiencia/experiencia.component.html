@@ -48,8 +48,9 @@
         <tbody >
   
     <tr *ngFor="let row of datosExperiencia">
-  
-     
+        <td>{{row.inicio}}</td>
+        <td>{{row.fin}}</td>
+        <td>{{row.id}}</td>
     <td>{{row.empresa}}</td>
     
     <td>
@@ -144,7 +145,7 @@
           (click)="agregaExperiencia()"
           class="btn btn-primary">agregar Empresa</button>
           <button type="button" 
-          (click)="actualizarEducacion()"
+          (click)="actualizarExperiencia()"
           class="btn btn-primary">Actualizar</button>
         </div>
       </div>

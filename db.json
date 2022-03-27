@@ -20,19 +20,39 @@
   "Experiencia": [
     {
       "id": 1,
-      "año1": "2014",
-      "año2": "2025",
       "empresa": "dsadas",
       "puesto": "dads",
       "actividad": "dsadas"
     },
     {
       "id": 2,
-      "año1": 0,
-      "año2": 0,
       "empresa": "ea",
       "puesto": "eadsa",
       "actividad": "dasdsa"
+    },
+    {
+      "id": 3,
+      "empresa": "Zille",
+      "puesto": "administrativo",
+      "actividad": "sacar fotocopias"
+    },
+    {
+      "id": 4,
+      "empresa": "dsadas",
+      "puesto": "dads",
+      "actividad": "dsadas"
+    },
+    {
+      "id": 5,
+      "empresa": null,
+      "puesto": null,
+      "actividad": null
+    },
+    {
+      "id": 6,
+      "empresa": "zille",
+      "puesto": "comercio",
+      "actividad": "descripcion "
     }
   ]
 }

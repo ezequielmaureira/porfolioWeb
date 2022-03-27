@@ -23,8 +23,8 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.formValue=this.creadorForm.group({
         id:[''],
-        año1:[''],
-        año2:[''],
+        inicio:[''],
+        fin:[''],
         empresa:[''],
         puesto:[''],
         actividad:['']
@@ -102,8 +102,8 @@ eliminarExperiencia(id:number){
 }
  
 
-actualizarEducacion(){
-  this.ExperienciaModel.año1=this.formValue.value.año1;
+actualizarExperiencia(){
+this.ExperienciaModel.año1=this.formValue.value.año1;
 this.ExperienciaModel.año2=this.formValue.value.año2;
 this.ExperienciaModel.empresa=this.formValue.value.empresa;
 this.ExperienciaModel.puesto=this.formValue.value.puesto;
