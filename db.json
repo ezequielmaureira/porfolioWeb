@@ -8,13 +8,31 @@
   "Especialidad": [
     {
       "id": 1,
-      "especialidad": "Tecnica Universitaria en Administracion"
+      "especialidad": "Tecnica Universitaria "
     }
   ],
   "Descripcion": [
     {
       "id": 1,
-      "descripcion": "Entre sus competencias está: Diseñar, producir o mantener (programar, adaptar e integrar) componentes o subconjuntos de software (clases, módulos, pantallas, rutinas, subsistemas, programas en general) conforme a especificaciones (funcionales y técnicas) para ser integrados en aplicaciones."
+      "descripcion": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+    }
+  ],
+  "Experiencia": [
+    {
+      "id": 1,
+      "año1": "2014",
+      "año2": "2025",
+      "empresa": "dsadas",
+      "puesto": "dads",
+      "actividad": "dsadas"
+    },
+    {
+      "id": 2,
+      "año1": 0,
+      "año2": 0,
+      "empresa": "ea",
+      "puesto": "eadsa",
+      "actividad": "dasdsa"
     }
   ]
 }

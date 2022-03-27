@@ -1,1 +1,137 @@
-<p>experiencia works!</p>
+<h1>Experiencia</h1>
+
+
+<div class="container-fluid">
+ 
+  
+
+
+    <div class="header">
+      
+      <div class="cabecera">
+        <nav class="navbar">
+  
+          <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          
+          >agregar experiencia</button>
+      
+            
+          
+  
+          
+        </nav>
+  
+  
+      
+      <table class="table">
+  
+        <thead>
+        <tr>
+          <th scope="col">id Empresa</th>
+        <th scope="col">Empresa</th>
+  
+        
+        <th scope="col">Puesto</th>
+        
+        <th scope="col">Periodo trabajado </th>
+        
+        
+        <th scope="col">Actividades realizadas</th>
+        
+        
+        </tr>
+        </thead>
+  
+  
+  
+        
+        <tbody >
+  
+    <tr *ngFor="let row of datosExperiencia">
+  
+     
+    <td>{{row.empresa}}</td>
+    
+    <td>
+      <button type="button" (click)="editarExperiencia(row)" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+    </td>
+   
+    <td>
+  
+      <button (click)="eliminarExperiencia(row.id)">Delete</button>
+      
+    </td>
+    
+  
+  
+  
+  
+  
+    </tr>
+      
+        </tbody>
+        
+        
+        
+     
+        
+        
+        
+        
+        </table>
+  
+      </div>
+  
+  
+        
+    </div>
+  
+  
+     
+  </div>
+  
+  
+
+  
+  
+  <!-- Modal Empresa -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue"  >
+            <div class="mb-3">
+              <label for="Empresa" class="form-label">Empresa</label>
+              <input type="text" formControlName="empresa" class="form-control" id="Empresa" aria-describedby="Empresa">
+              <div id="Empresa" class="form-text">Debe Agregar empresa en la que trabajo.</div>
+            </div>
+            <div class="mb-3">
+              <label for="Puesto" class="form-label">Puesto</label>
+              <input type="text"formControlName="puesto" class="form-control" id="Puesto" aria-describedby="Puesto">
+              <div id="Puesto" class="form-text">Debe Agregar el cargo que ocupo.</div>
+            </div>
+            <div class="mb-3">
+          
+              <label for="Actividad" class="form-label">Actividad </label>
+              <input type="text" formControlName="actividad"class="form-control" id="Actividad" aria-describedby="Actividad">
+              <div id="Actividad" class="form-text">Debe Agregar las actividades que realizo.</div>
+            </div>
+  
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" 
+          (click)="agregaEducacion()"
+          class="btn btn-primary">agregar Empresa</button>
+          <button type="button" 
+          (click)="actualizarEducacion()"
+          class="btn btn-primary">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>

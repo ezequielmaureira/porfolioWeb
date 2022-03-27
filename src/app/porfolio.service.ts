@@ -13,9 +13,11 @@ export class PorfolioService {
   private ApiUrlNombre='http://localhost:4000/Nombre';
   private ApiUrlEspecialidad='http://localhost:4000/Especialidad';
   private ApiUrlDescripcion='http://localhost:4000/Descripcion';
+  private ApiUrlExperiencia='http://localhost:4000/Experiencia';
+ 
   constructor(private http:HttpClient) { }
 
- 
+   
     obtenerNombre():Observable<any>{
 
     return this.http.get<any>(this.ApiUrlNombre)
@@ -49,5 +51,49 @@ actualizarDescripcion(descripcion:any, id:number):Observable<any>{
   return this.http.put<any>(this.ApiUrlDescripcion+"/"+id,descripcion) 
 }
 
+
+
+
+agregarExperiencia(data:any):Observable<any>{
+
+  return this.http.post<any>(this.ApiUrlExperiencia,data)
+  
+ 
+
+  }
+
+
+
+
+obtenerExperiencia():Observable<any>{
+
+  return this.http.get<any>(this.ApiUrlExperiencia)
+  
+    
+  }
+
+
+
+
+
+actualizarExperiencia(data:any, id:number):Observable<any>{
+
+  return this.http.put<any>(this.ApiUrlExperiencia+"/"+id,data)
+  
+
 }
+borrarExperiencia(id:any){
+
+  return this.http.delete(this.ApiUrlExperiencia+"/"+id)
+  
+  }
+
+
+}
+
+
+
+
+
+
 

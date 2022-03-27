@@ -124,14 +124,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="DescripcionModalLabel">Especialidad</h5>
+        <h5 class="modal-title" id="DescripcionModalLabel">Descripcion de perfil</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="formDescripcion">
           <div class="mb-3">
             <label for="Descripcion" class="form-label"></label>
-            <input type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion">
+            <textarea type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion"></textarea>
             <div id="descripcion" class="form-text">Debe Agregar su Descripcion</div>
           </div>
            
