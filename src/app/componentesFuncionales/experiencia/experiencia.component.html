@@ -105,6 +105,21 @@
         <div class="modal-body">
           <form [formGroup]="formValue"  >
             <div class="mb-3">
+            
+                <label for="Año1" class="form-label">Año de Inicio</label>
+                <input type="text" formControlName="inicio" class="form-control" id="inicio" aria-describedby="inicio">
+                <div id="inicio" class="form-text">Debe Agregar año de inicio de empleo.</div>
+              </div>
+              <div class="mb-3">
+            
+                <label for="Año2" class="form-label">Año de Finalizacion</label>
+                <input type="text" formControlName="fin" class="form-control" id="fin" aria-describedby="fin">
+                <div id="fin" class="form-text">Debe Agregar año de finalizacion de empleo.</div>
+              </div>
+              <div class="mb-3">
+            
+            
+            
               <label for="Empresa" class="form-label">Empresa</label>
               <input type="text" formControlName="empresa" class="form-control" id="Empresa" aria-describedby="Empresa">
               <div id="Empresa" class="form-text">Debe Agregar empresa en la que trabajo.</div>
@@ -126,7 +141,7 @@
         <div class="modal-footer">
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" 
-          (click)="agregaEducacion()"
+          (click)="agregaExperiencia()"
           class="btn btn-primary">agregar Empresa</button>
           <button type="button" 
           (click)="actualizarEducacion()"

@@ -36,8 +36,11 @@ export class ExperienciaComponent implements OnInit {
 
   }
   
-  agregaEducacion(){
+  agregaExperiencia(){
+
   this.ExperienciaModel.id=this.formValue.value.id;
+  this.ExperienciaModel.año1=this.formValue.value.año1;
+  this.ExperienciaModel.año2=this.formValue.value.año2;
   this.ExperienciaModel.empresa=this.formValue.value.empresa;
   this.ExperienciaModel.puesto=this.formValue.value.puesto;
   this.ExperienciaModel.actividad=this.formValue.value.actividad;
@@ -90,6 +93,8 @@ eliminarExperiencia(id:number){
 
   editarExperiencia(row:any){
    this.ExperienciaModel.id=row.id;
+   this.formValue.controls["inicio"].setValue(row.empresa);
+   this.formValue.controls["fin"].setValue(row.empresa);
    this.formValue.controls["empresa"].setValue(row.empresa);
    this.formValue.controls["puesto"].setValue(row.puesto);
     this.formValue.controls["actividad"].setValue(row.actividad);
@@ -98,7 +103,8 @@ eliminarExperiencia(id:number){
  
 
 actualizarEducacion(){
-
+  this.ExperienciaModel.año1=this.formValue.value.año1;
+this.ExperienciaModel.año2=this.formValue.value.año2;
 this.ExperienciaModel.empresa=this.formValue.value.empresa;
 this.ExperienciaModel.puesto=this.formValue.value.puesto;
 this.ExperienciaModel.actividad=this.formValue.value.actividad;
