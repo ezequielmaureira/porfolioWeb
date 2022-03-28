@@ -15,7 +15,8 @@ export class ExperienciaComponent implements OnInit {
   formValue!:FormGroup;
   ExperienciaModel:ExpModel=new ExpModel();
   datosExperiencia!:any;
-   
+  mostrarActualizar!:boolean;
+  mostrarAgregar!:boolean;
   
    constructor(private creadorForm:FormBuilder,private api:PorfolioService){}
 
@@ -35,12 +36,19 @@ export class ExperienciaComponent implements OnInit {
 
 
   }
+
+  clickNuevaEmpresa(){
+ this.formValue.reset();
+ this.mostrarActualizar=false;
+ this.mostrarAgregar=true; 
+
+  }
   
   agregaExperiencia(){
 
   this.ExperienciaModel.id=this.formValue.value.id;
-  this.ExperienciaModel.año1=this.formValue.value.año1;
-  this.ExperienciaModel.año2=this.formValue.value.año2;
+  this.ExperienciaModel.inicio=this.formValue.value.inicio;
+  this.ExperienciaModel.fin=this.formValue.value.fin;
   this.ExperienciaModel.empresa=this.formValue.value.empresa;
   this.ExperienciaModel.puesto=this.formValue.value.puesto;
   this.ExperienciaModel.actividad=this.formValue.value.actividad;
@@ -52,8 +60,10 @@ alert("Experiencia Agregada")
  let ref=document.getElementById('cancel')
  ref?.click();
  this.mostrarExperiencia=data;
+ this.formValue.reset();
 
-this.formValue.reset();
+
+
  },
  err=>{
 
@@ -92,6 +102,11 @@ eliminarExperiencia(id:number){
   }
 
   editarExperiencia(row:any){
+
+this.mostrarActualizar=true;
+ this.mostrarAgregar=false; 
+
+  
    this.ExperienciaModel.id=row.id;
    this.formValue.controls["inicio"].setValue(row.empresa);
    this.formValue.controls["fin"].setValue(row.empresa);
@@ -103,8 +118,8 @@ eliminarExperiencia(id:number){
  
 
 actualizarExperiencia(){
-this.ExperienciaModel.año1=this.formValue.value.año1;
-this.ExperienciaModel.año2=this.formValue.value.año2;
+this.ExperienciaModel.inicio=this.formValue.value.inicio;
+this.ExperienciaModel.fin=this.formValue.value.fin;
 this.ExperienciaModel.empresa=this.formValue.value.empresa;
 this.ExperienciaModel.puesto=this.formValue.value.puesto;
 this.ExperienciaModel.actividad=this.formValue.value.actividad;
@@ -112,8 +127,11 @@ this.ExperienciaModel.actividad=this.formValue.value.actividad;
 this.api.actualizarExperiencia(this.ExperienciaModel,this.ExperienciaModel.id)
 .subscribe(res=>{
 
- let ref=document.getElementById('cancel')
+  let ref=document.getElementById('cancel')
  ref?.click();
+ this.formValue.reset(); 
+this.mostrarExperiencia(res);
+
  this.formValue.reset(); 
 this.mostrarExperiencia(res);
 

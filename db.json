@@ -8,7 +8,7 @@
   "Especialidad": [
     {
       "id": 1,
-      "especialidad": "Tecnica Universitaria "
+      "especialidad": "Tecnica Universitaria en Administracion"
     }
   ],
   "Descripcion": [
@@ -19,40 +19,36 @@
   ],
   "Experiencia": [
     {
-      "id": 1,
-      "empresa": "dsadas",
-      "puesto": "dads",
-      "actividad": "dsadas"
-    },
-    {
-      "id": 2,
-      "empresa": "ea",
-      "puesto": "eadsa",
-      "actividad": "dasdsa"
-    },
-    {
-      "id": 3,
-      "empresa": "Zille",
-      "puesto": "administrativo",
-      "actividad": "sacar fotocopias"
-    },
-    {
       "id": 4,
-      "empresa": "dsadas",
-      "puesto": "dads",
-      "actividad": "dsadas"
+      "inicio": "google",
+      "fin": "google",
+      "empresa": "google",
+      "puesto": "programador junior ",
+      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
     },
     {
       "id": 5,
-      "empresa": null,
-      "puesto": null,
-      "actividad": null
+      "inicio": "2020",
+      "fin": "2020",
+      "empresa": "municipalidad",
+      "puesto": "administracion",
+      "actividad": "tomar mate"
     },
     {
       "id": 6,
-      "empresa": "zille",
-      "puesto": "comercio",
-      "actividad": "descripcion "
+      "inicio": "google",
+      "fin": "google",
+      "empresa": "google",
+      "puesto": "programador junior ",
+      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
+    },
+    {
+      "id": 7,
+      "inicio": "google",
+      "fin": "google",
+      "empresa": "google",
+      "puesto": "programador junior ",
+      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
     }
   ]
 }
