@@ -89,7 +89,8 @@ eliminarExperiencia(id:number){
   
   this.api.borrarExperiencia(id)
   .subscribe(data=>{
-    this.datosExperiencia=data as string[];
+   
+    this.datosExperiencia=data;
     
     alert("educacion eliminada");
 

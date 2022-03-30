@@ -33,22 +33,6 @@
       "empresa": "municipalidad",
       "puesto": "administracion",
       "actividad": "tomar mate"
-    },
-    {
-      "id": 6,
-      "inicio": "google",
-      "fin": "google",
-      "empresa": "google",
-      "puesto": "programador junior ",
-      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
-    },
-    {
-      "id": 7,
-      "inicio": "google",
-      "fin": "google",
-      "empresa": "google",
-      "puesto": "programador junior ",
-      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
     }
   ]
 }

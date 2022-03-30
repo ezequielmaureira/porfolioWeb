@@ -8,7 +8,7 @@
   
   /* For presentation only, no need to copy the code below */
   
-  .container-fluid * {
+  .container-fluid {
    
     position: relative;
     background-color: rgb(118, 238, 238);
@@ -22,7 +22,7 @@
 .acerca{
     
   
-      height: 400px;
+      height: auto;
         width: auto;
       
         
@@ -35,19 +35,19 @@
 }
   .educacion{
 
-    height: 600px;
+    height:auto;
     width: auto;
   
   }  
   .competencias{
 
-    height: 600px;
+    height: auto;
     width: auto;
   
   }
   .proyectos{
 
-    height: 600px;
+    height: auto;
     width: auto;
   
   }
