@@ -20,19 +20,11 @@
   "Experiencia": [
     {
       "id": 4,
-      "inicio": "google",
-      "fin": "google",
+      "inicio": "2022",
+      "fin": "2025",
       "empresa": "google",
       "puesto": "programador junior ",
       "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
-    },
-    {
-      "id": 5,
-      "inicio": "2020",
-      "fin": "2020",
-      "empresa": "municipalidad",
-      "puesto": "administracion",
-      "actividad": "tomar mate"
     }
   ]
 }
