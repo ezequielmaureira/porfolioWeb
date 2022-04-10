@@ -90,8 +90,6 @@ eliminarExperiencia(id:any){
   this.api.borrarExperiencia(id)
   .subscribe(data=>{
    
-    this.datosExperiencia=data as string[];
-    
     alert("educacion eliminada");
 
   })
@@ -113,7 +111,7 @@ this.mostrarActualizar=true;
    this.formValue.controls["fin"].setValue(row.fin);
    this.formValue.controls["empresa"].setValue(row.empresa);
    this.formValue.controls["puesto"].setValue(row.puesto);
-    this.formValue.controls["actividad"].setValue(row.actividad);
+   this.formValue.controls["actividad"].setValue(row.actividad);
    console.log(row)
 }
  
@@ -128,12 +126,12 @@ this.ExperienciaModel.actividad=this.formValue.value.actividad;
 this.api.actualizarExperiencia(this.ExperienciaModel,this.ExperienciaModel.id)
 .subscribe(res=>{
 
-  let ref=document.getElementById('cancel')
+let ref=document.getElementById('cancel')
  ref?.click();
  this.formValue.reset(); 
 this.mostrarExperiencia(res);
 
- this.formValue.reset(); 
+this.formValue.reset(); 
 this.mostrarExperiencia(res);
 
 
