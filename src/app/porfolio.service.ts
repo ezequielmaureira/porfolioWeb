@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ifnombre } from './componentesFuncionales/acerca/nombre';
 import { Observable } from 'rxjs';
 import { AcercaComponent } from './componentesFuncionales/acerca/acerca.component';
+
+const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class PorfolioService {
   private ApiUrlNombre='http://localhost:4000/Nombre';
   private ApiUrlEspecialidad='http://localhost:4000/Especialidad';
   private ApiUrlDescripcion='http://localhost:4000/Descripcion';
-  private ApiUrlExperiencia='http://localhost:4000/Experiencia';
+  private ApiUrlExperiencia='http://localhost:8080/api/experiencia';
  
   constructor(private http:HttpClient) { }
 

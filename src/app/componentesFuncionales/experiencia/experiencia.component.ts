@@ -57,7 +57,7 @@ export class ExperienciaComponent implements OnInit {
 
 console.log(data);
 alert("Experiencia Agregada")
- let ref=document.getElementById('cancel')
+let ref=document.getElementById('cancel')
  ref?.click();
  this.mostrarExperiencia=data;
  this.formValue.reset();
@@ -89,7 +89,7 @@ eliminarExperiencia(id:any){
   
   this.api.borrarExperiencia(id)
   .subscribe(data=>{
-   
+ 
     alert("educacion eliminada");
 
   })

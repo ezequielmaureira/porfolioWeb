@@ -1,0 +1,38 @@
+{
+  "Nombre": [
+    {
+      "id": 1,
+      "nombre": "Nadia Soledad "
+    }
+  ],
+  "Especialidad": [
+    {
+      "id": 1,
+      "especialidad": "Tecnica Universitaria en Administracion"
+    }
+  ],
+  "Descripcion": [
+    {
+      "id": 1,
+      "descripcion": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+    }
+  ],
+  "Experiencia": [
+    {
+      "id": 4,
+      "inicio": "2022",
+      "fin": "2025",
+      "empresa": "google",
+      "puesto": "programador junior ",
+      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
+    },
+    {
+      "id": 5,
+      "inicio": "2014",
+      "fin": "2026",
+      "empresa": "tipo",
+      "puesto": "adaoe",
+      "actividad": "adsa"
+    }
+  ]
+}
