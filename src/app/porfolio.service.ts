@@ -15,7 +15,7 @@ export class PorfolioService {
   private ApiUrlNombre='http://localhost:4000/Nombre';
   private ApiUrlEspecialidad='http://localhost:4000/Especialidad';
   private ApiUrlDescripcion='http://localhost:4000/Descripcion';
-  private ApiUrlExperiencia='http://localhost:8080/api/experiencia';
+  private ApiUrlExperiencia='http://localhost:4000/Experiencia';
  
   constructor(private http:HttpClient) { }
 
