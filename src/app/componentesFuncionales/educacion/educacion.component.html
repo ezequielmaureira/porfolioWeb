@@ -1,1 +1,154 @@
-<p>educacion works!</p>
+
+<div class="container-fluid">
+ 
+  
+
+
+    <div class="header">
+      
+      <div class="cabecera">
+        <nav class="navbar">
+            <h1>Experiencia</h1>
+          <button type="button"   (click)="clickNuevaEmpresa()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          
+          Nueva Empresa </button>
+      
+                     
+  
+          
+        </nav>
+  
+  
+      
+      <table class="table">
+  
+        <thead>
+        <tr>
+        <th scope="col">Año Inicio</th>
+        <th scope="col">Año Finalizacion</th>
+  
+        
+        <th scope="col">Empresa </th>
+        
+        <th scope="col">Puesto</th>
+        
+        
+        <th scope="col">Actividades realizadas</th>
+        
+        
+        </tr>
+        </thead>
+  
+  
+  
+        
+        <tbody >
+  
+    <tr *ngFor="let row of datosExperiencia">
+
+        <td>{{row.inicio}}</td>
+        <td>{{row.fin}}</td>
+        <td>{{row.empresa}}</td>
+        <td>{{row.puesto}}</td>
+        <td>{{row.actividad}}</td>
+    
+    <td>
+      <button type="button" (click)="editarExperiencia(row)" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-pen"></i></button>
+    </td>
+   
+    <td>
+  
+      <button (click)="eliminarExperiencia(row.id)" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      
+    </td>
+    
+  
+  
+  
+  
+  
+    </tr>
+      
+        </tbody>
+        
+        
+        
+     
+        
+        
+        
+        
+        </table>
+  
+      </div>
+  
+  
+        
+    </div>
+  
+  
+     
+  </div>
+  
+  
+
+  
+  
+  <!-- Modal Empresa -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue" class="row g-3 needs-validation" novalidate>
+            <div class="mb-3">
+            
+                <label for="inicio" class="form-label">Año de Inicio</label>
+                <input type="text" formControlName='inicio' class="form-control" id="inicio" required>
+                <div id="inicio" class="form-text">Debe Agregar año de inicio de empleo.</div>
+              </div>
+              <div class="mb-3">
+            
+                <label for="Año2" class="form-label">Año de Finalizacion</label>
+                <input type="text" formControlName="fin" class="form-control" id="fin" aria-describedby="fin">
+                <div id="fin" class="form-text">Debe Agregar año de finalizacion de empleo.</div>
+              </div>
+              <div class="mb-3">
+            
+            
+            
+              <label for="Empresa" class="form-label">Empresa</label>
+              <input type="text" formControlName="empresa" class="form-control" id="Empresa" aria-describedby="Empresa">
+              <div id="Empresa" class="form-text">Debe Agregar empresa en la que trabajo.</div>
+            </div>
+            <div class="mb-3">
+              <label for="Puesto" class="form-label">Puesto</label>
+              <input type="text"formControlName="puesto" class="form-control" id="Puesto" aria-describedby="Puesto">
+              <div id="Puesto" class="form-text">Debe Agregar el cargo que ocupo.</div>
+            </div>
+            <div class="mb-3">
+          
+              <label for="Actividad" class="form-label">Actividad </label>
+              <textarea type="text" formControlName="actividad"class="form-control" id="Actividad" aria-describedby="Actividad"></textarea>
+              <div id="Actividad" class="form-text">Debe Agregar las actividades que realizo.</div>
+            </div>
+  
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" data-bs-dismiss="modal"
+          (click)="agregaExperiencia()" *ngIf="mostrarAgregar"
+          class="btn btn-primary">agregar Empresa</button>
+          <button type="submit" 
+          (click)="actualizarExperiencia()" *ngIf="mostrarActualizar"
+          class="btn btn-primary"data-bs-dismiss="modal"   >Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>

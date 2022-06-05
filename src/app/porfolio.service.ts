@@ -16,7 +16,8 @@ export class PorfolioService {
   private ApiUrlEspecialidad='http://localhost:5000/Especialidad';
   private ApiUrlDescripcion='http://localhost:5000/Descripcion';
   private ApiUrlExperiencia='http://localhost:5000/Experiencia';
- 
+  private ApiUrlEducacion= 'http://localhost:5000/Educacion';
+
   constructor(private http:HttpClient) { }
 
    
@@ -77,13 +78,14 @@ obtenerExperiencia():Observable<any>{
 
 
 
-
+  
 actualizarExperiencia(data:any, id:number):Observable<any>{
 
   return this.http.put<any>(this.ApiUrlExperiencia+"/"+id,data)
   
 
 }
+
 borrarExperiencia(id:any){
 
   return this.http.delete(this.ApiUrlExperiencia+"/"+id)
@@ -91,7 +93,45 @@ borrarExperiencia(id:any){
   }
 
 
+agregarEducacion(data:any):Observable<any>{
+
+  return this.http.post<any>(this.ApiUrlEducacion,data)
+  
+ 
 }
+
+
+
+
+
+obtenerEducacion():Observable<any>{
+
+  return this.http.get<any>(this.ApiUrlEducacion)
+  
+
+  }
+
+
+
+
+
+actualizarEducacion(data:any, id:number):Observable<any>{
+
+  return this.http.put<any>(this.ApiUrlEducacion+"/"+id,data)
+  
+
+}
+borrarEducacion(id:any){
+
+  return this.http.delete(this.ApiUrlExperiencia+"/"+id)
+  
+  
+
+}
+
+
+}
+
 
 
 
