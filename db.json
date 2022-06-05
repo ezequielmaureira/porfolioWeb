@@ -33,6 +33,14 @@
       "empresa": "tipo",
       "puesto": "adaoe",
       "actividad": "adsa"
+    },
+    {
+      "id": 6,
+      "inicio": "2025",
+      "fin": "2026",
+      "empresa": "dsa",
+      "puesto": "dsa",
+      "actividad": "asda"
     }
   ]
 }

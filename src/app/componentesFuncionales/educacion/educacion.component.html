@@ -8,10 +8,10 @@
       
       <div class="cabecera">
         <nav class="navbar">
-            <h1>Experiencia</h1>
-          <button type="button"   (click)="clickNuevaEducacion()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <h1>Educacion</h1>
+          <button type="button"   (click)="clickNuevaEducacion()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eduModal">
           
-          Nueva Empresa </button>
+          Nueva Educacion </button>
       
                      
   
@@ -28,12 +28,12 @@
         <th scope="col">Año Finalizacion</th>
   
         
-        <th scope="col">Empresa </th>
+        <th scope="col">Institucion </th>
         
-        <th scope="col">Puesto</th>
+        <th scope="col">Titulo</th>
         
         
-        <th scope="col">Actividades realizadas</th>
+       
         
         
         </tr>
@@ -48,9 +48,9 @@
 
         <td>{{row.inicio}}</td>
         <td>{{row.fin}}</td>
-        <td>{{row.empresa}}</td>
-        <td>{{row.puesto}}</td>
-        <td>{{row.actividad}}</td>
+        <td>{{row.institucion}}</td>
+        <td>{{row.titulo}}</td>
+       
     
     <td>
       <button type="button" (click)="editarEducacion(row)" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-pen"></i></button>
@@ -95,7 +95,7 @@
   
   
   <!-- Modal Educacion -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="eduModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
