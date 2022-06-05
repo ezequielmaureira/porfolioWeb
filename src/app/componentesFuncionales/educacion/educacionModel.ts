@@ -5,7 +5,7 @@ export class eduModel {
     fin:number=0;
     instituccion:string="";
     titulo:string="";
-  institucion: any;
+    institucion: any;
   
     
     
