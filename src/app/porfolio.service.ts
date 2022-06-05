@@ -123,7 +123,7 @@ actualizarEducacion(data:any, id:number):Observable<any>{
 }
 borrarEducacion(id:any){
 
-  return this.http.delete(this.ApiUrlExperiencia+"/"+id)
+  return this.http.delete(this.ApiUrlEducacion+"/"+id)
   
   
 

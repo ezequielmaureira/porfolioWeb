@@ -27,20 +27,29 @@
       "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
     },
     {
-      "id": 5,
-      "inicio": "2014",
-      "fin": "2026",
-      "empresa": "tipo",
-      "puesto": "adaoe",
-      "actividad": "adsa"
-    },
-    {
       "id": 6,
       "inicio": "2025",
       "fin": "2026",
       "empresa": "dsa",
       "puesto": "dsa",
       "actividad": "asda"
+    }
+  ],
+  "Educacion": [
+    {
+      "id": 4,
+      "inicio": "2022",
+      "fin": "2025",
+      "institucion": "google",
+      "titulo": "programador junior "
+    },
+    {
+      "id": 5,
+      "inicio": "1999",
+      "fin": "2036",
+      "instituccion": "",
+      "titulo": "Perito Mercantil",
+      "institucion": "insitututo domingo savio"
     }
   ]
 }
