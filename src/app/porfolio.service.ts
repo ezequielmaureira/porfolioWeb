@@ -12,10 +12,10 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
 export class PorfolioService {
   
   
-  private ApiUrlNombre='http://localhost:4000/Nombre';
-  private ApiUrlEspecialidad='http://localhost:4000/Especialidad';
-  private ApiUrlDescripcion='http://localhost:4000/Descripcion';
-  private ApiUrlExperiencia='http://localhost:4000/Experiencia';
+  private ApiUrlNombre='http://localhost:5000/Nombre';
+  private ApiUrlEspecialidad='http://localhost:5000/Especialidad';
+  private ApiUrlDescripcion='http://localhost:5000/Descripcion';
+  private ApiUrlExperiencia='http://localhost:5000/Experiencia';
  
   constructor(private http:HttpClient) { }
 
