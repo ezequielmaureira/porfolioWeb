@@ -38,18 +38,27 @@
   "Educacion": [
     {
       "id": 4,
-      "inicio": "2022",
+      "inicio": "2010",
       "fin": "2025",
-      "institucion": "google",
-      "titulo": "programador junior "
+      "instituccion": "",
+      "titulo": "programador junior ",
+      "institucion": "google"
     },
     {
       "id": 5,
-      "inicio": "1999",
+      "inicio": "2015",
       "fin": "2036",
       "instituccion": "",
       "titulo": "Perito Mercantil",
       "institucion": "insitututo domingo savio"
+    }
+  ],
+  "Competencia": [
+    {
+      "id": 4,
+      "nombre": "Java",
+      "grado": "80"
+     
     }
   ]
 }

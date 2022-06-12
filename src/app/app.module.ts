@@ -13,7 +13,7 @@ import { VistaComponent } from './componenteVista/vista/vista.component';
 import { PorfolioService } from './porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +23,16 @@ import { Observable } from 'rxjs';
     ExperienciaComponent,
     EducacionComponent,
     CompetenciasComponent,
-    ProyectosComponent
+    ProyectosComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    NgChartsModule 
   ],
   providers: [PorfolioService],
   bootstrap: [AppComponent]
