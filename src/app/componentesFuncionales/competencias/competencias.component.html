@@ -15,3 +15,134 @@
       </div>
  </div>
 </div>
+
+<div class="container-fluid">
+ 
+  
+
+
+  <div class="header">
+    
+    <div class="cabecera">
+      <nav class="navbar">
+          <h1>Competencias</h1>
+        <button type="button"   (click)="clickNuevaCompetencia()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#compModal">
+        
+        Nueva Competencia </button>
+    
+                   
+
+        
+      </nav>
+
+
+    
+    <table class="table">
+
+      <thead>
+      <tr>
+      <th scope="col">Nombre Competencia</th>
+      <th scope="col">Grado Conocimiento</th>
+       
+          
+      
+      </tr>
+      </thead>
+
+
+
+      
+      <tbody >
+
+  <tr *ngFor="let row of datosCompetencia">
+
+      <td>{{row.nombre}}</td>
+      <td>{{row.grado}}</td>
+      
+     
+  
+  <td>
+    <button type="button" (click)="editarCompetencia(row)" class="boton" data-bs-toggle="modal" data-bs-target="#compModal"> <i class="fa-solid fa-pen"></i></button>
+  </td>
+ 
+  <td>
+
+    <button (click)="eliminarCompetencia(row.id)" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+    
+  </td>
+  
+
+
+
+
+
+  </tr>
+    
+      </tbody>
+      
+      
+      
+   
+      
+      
+      
+      
+      </table>
+
+    </div>
+
+
+      
+  </div>
+
+
+   
+</div>
+
+
+
+
+
+<!-- Modal Competencia-->
+
+<div class="modal fade" id="compModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Competencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue" class="row g-3 needs-validation" novalidate>
+          <div class="mb-3">
+          
+              <label for="nombre" class="form-label">Nombre de competencia</label>
+              <input type="text" formControlName='nombre' class="form-control" id="nombre" required>
+              <div id="nombre" class="form-text">Debe Agregar nombre de la competencia</div>
+            </div>
+            <div class="mb-3">
+          
+              <label for="grado" class="form-label">Grado de conocimiento</label>
+              <input type="text" formControlName="fin" class="form-control" id="grado" aria-describedby="fin">
+              <div id="fin" class="form-text">Debe Agregar Grado de conocimiento de la competencia</div>
+            </div>
+           
+          
+                    
+        </form> 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" data-bs-dismiss="modal"
+        (click)="agregaCompetencia()" *ngIf="mostrarAgregar"
+        class="btn btn-primary">agregar Competencia </button>
+        <button type="submit" 
+        (click)="actualizarCompetencia()" *ngIf="mostrarActualizar"
+        class="btn btn-primary"data-bs-dismiss="modal"   >Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

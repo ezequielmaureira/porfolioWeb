@@ -47,8 +47,8 @@ export class CompetenciasComponent  {
   agregaCompetencia(){
 
   this.CompetenciasModel.id=this.formValue.value.id;
-  this.CompetenciasModel.nombre=this.formValue.value.inicio;
-  this.CompetenciasModel.grado=this.formValue.value.fin;
+  this.CompetenciasModel.nombre=this.formValue.value.nombre;
+  this.CompetenciasModel.grado=this.formValue.value.grado;
   
 
  this.api.agregarCompetencia(this.CompetenciasModel).subscribe(data=>{
@@ -114,7 +114,7 @@ this.mostrarActualizar=true;
 
 actualizarCompetencia(){
 this.CompetenciasModel.nombre=this.formValue.value.nombre;
-this.CompetenciasModel.grado=this.formValue.value.fin;
+this.CompetenciasModel.grado=this.formValue.value.grado;
 
 
 this.api.actualizarEducacion(this.CompetenciasModel,this.CompetenciasModel.id)
