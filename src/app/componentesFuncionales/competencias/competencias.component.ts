@@ -117,7 +117,7 @@ this.CompetenciasModel.nombre=this.formValue.value.nombre;
 this.CompetenciasModel.grado=this.formValue.value.grado;
 
 
-this.api.actualizarEducacion(this.CompetenciasModel,this.CompetenciasModel.id)
+this.api.actualizarCompetencia(this.CompetenciasModel,this.CompetenciasModel.id)
 .subscribe(res=>{
 
 let ref=document.getElementById('cancel')
@@ -146,6 +146,7 @@ this.mostrarCompetencia(res);
    public radarChartOptions: ChartConfiguration['options'] = {
     responsive: true,
   };
+  
   public radarChartLabels: string[] = [ 'HTML', 'ANGULAR', 'INGLES', 'CSS', 'JAVASCRIPT', 'JAVA' ];
 
   public radarChartData: ChartData<'radar'> = {

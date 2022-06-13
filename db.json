@@ -43,10 +43,6 @@
       "instituccion": "",
       "titulo": "programador junior ",
       "institucion": "google"
-    },
-    {
-      "id": 5,
-      "nombre": "angular"
     }
   ],
   "Competencia": [
@@ -58,7 +54,7 @@
     {
       "id": 5,
       "nombre": "angular",
-      "grado": null
+      "grado": "100"
     }
   ]
 }
