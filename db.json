@@ -55,6 +55,11 @@
       "id": 5,
       "nombre": "angular",
       "grado": "100"
+    },
+    {
+      "id": 6,
+      "nombre": "react",
+      "grado": "80"
     }
   ]
 }
