@@ -26,6 +26,7 @@ export class CompetenciasComponent  {
         id:[''],
         nombre:[''],
         grado:[''],
+        
        
 
 

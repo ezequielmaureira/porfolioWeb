@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ifnombre } from './componentesFuncionales/acerca/nombre';
 import { Observable } from 'rxjs';
 import { AcercaComponent } from './componentesFuncionales/acerca/acerca.component';
-
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+import { environment } from 'src/environments/environment';
+import { Usuario } from './Models/Usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,27 @@ export class PorfolioService {
   private ApiUrlExperiencia='http://localhost:5000/Experiencia';
   private ApiUrlEducacion= 'http://localhost:5000/Educacion';
   private ApiUrlCompetencia= 'http://localhost:5000/Competencia';
+  private apiServerUrl=environment.apiBaseUrl;
+
+
   constructor(private http:HttpClient) { }
+
+
+   public getUser():Observable<Usuario>{
+
+    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
+
+
+   }
+
+   public updateUser(usuario:Usuario):Observable<Usuario>{
+
+   return this.http.put<Usuario>(`${this.apiServerUrl}/usuario/editar`,usuario)
+   
+ 
+   }
+
+
 
    
     obtenerNombre():Observable<any>{
@@ -165,6 +185,9 @@ borrarCompetencia(id:any){
   
 
 }
+
+
+
 
 
 }
