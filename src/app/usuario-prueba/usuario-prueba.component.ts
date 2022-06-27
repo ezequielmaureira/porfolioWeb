@@ -9,32 +9,20 @@ import { PorfolioService } from '../porfolio.service';
 })
 export class UsuarioPruebaComponent implements OnInit {
 
-  public usuario : Usuario |undefined;
-  public editUsuario: Usuario|undefined;
+ usuario:Usuario=new Usuario("","","","","")
+
   
 
   constructor(private porfolioService:PorfolioService) { }
 
   ngOnInit(): void {
-    this.getUser();
+    this.porfolioService.getUser().subscribe(data=>{this.usuario=data})
 
   }
   
-  public getUser():void{
-  this.porfolioService.getUser().subscribe({
-  next:(response:Usuario)=>{
-
-    this.usuario=response;
-  },
-  error:(error:HttpErrorResponse)=>{
-
-    alert(error.message)
-  }
-
-  })
   
 
   }
 
 
-}
+
