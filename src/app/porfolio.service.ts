@@ -26,7 +26,7 @@ export class PorfolioService {
 
    public getUser():Observable<Usuario>{
 
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
+    return this.http.get<Usuario>(this.apiServerUrl+/usuario/traer);
 
 
    }
