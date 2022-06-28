@@ -12,11 +12,11 @@
    
     <div class="NOMBRE">
           
-          <tr *ngFor="let n of Nomb" >
+          <tr>
             
-            <td>{{n.nombre}}</td>
+            <td id="usuario">{{usuario.nombre}}</td>
           
-          <td><button type="button" (click)="editarNombre(n)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          <td><button type="button" (click)="editarNombre(usuario)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button></td>
           </tr>
          

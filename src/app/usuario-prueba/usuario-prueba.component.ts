@@ -9,7 +9,7 @@ import { PorfolioService } from '../porfolio.service';
 })
 export class UsuarioPruebaComponent implements OnInit {
 
- usuario:Usuario=new Usuario("","","","","")
+ usuario:Usuario=new Usuario("","","","","");
 
   
 

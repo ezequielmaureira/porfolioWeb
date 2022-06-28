@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Usuario } from 'src/app/Models/Usuario';
 import { PorfolioService } from 'src/app/porfolio.service';
 import { Ifdescripcion } from './descripcion';
 import { Ifespecialidad } from './especialidad';
@@ -16,9 +17,12 @@ export class AcercaComponent implements OnInit {
   formEspecialidad!:FormGroup;
   formNombre!:FormGroup;
   formDescripcion!:FormGroup;
+  formUsuario!:FormGroup;
+  usuario:Usuario=new Usuario("","","","","");
   ModeloNombre:Ifnombre=new Ifnombre();
   ModeloEspecialidad:Ifespecialidad=new Ifespecialidad();
   ModeloDescripcion:Ifdescripcion=new Ifdescripcion();
+
   Nomb:any;
   Espec:any;
   Desc:any;  
@@ -26,6 +30,13 @@ export class AcercaComponent implements OnInit {
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 
   ngOnInit(): void {
+     
+    this.formUsuario=this.creadorForm.group({   
+      nombre:[''], apellido:[''], titulo: [''],descripcion:[''],fotoPerfil:['']
+        
+
+        })
+
       this.formNombre=this.creadorForm.group({   
       nombre:[''],
         })
@@ -38,8 +49,9 @@ export class AcercaComponent implements OnInit {
     this.mostrarDatosNombre(this.Nomb);
     this.mostrarDatosEspecialidad(this.Espec);
     this.mostrarDatosDescripcion(this.Desc);
+    
      }
-
+    
 
   editarNombre(n:any){
     this.ModeloNombre.id=n.id;
@@ -105,7 +117,16 @@ this.api.obtenerDescripcion().subscribe(data2=>{
   console.log(this.Desc);
 })
 
-}
-}
 
 
+}
+
+mostrarUsuario(data:any){
+  this.api.getUser().subscribe(data=>{
+
+this.usuario=data;
+
+  })
+}
+
+}

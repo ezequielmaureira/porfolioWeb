@@ -18,7 +18,7 @@ export class PorfolioService {
   private ApiUrlExperiencia='http://localhost:5000/Experiencia';
   private ApiUrlEducacion= 'http://localhost:5000/Educacion';
   private ApiUrlCompetencia= 'http://localhost:5000/Competencia';
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl='http://localhost:8080';
 
 
   constructor(private http:HttpClient) { }
@@ -26,7 +26,7 @@ export class PorfolioService {
 
    public getUser():Observable<Usuario>{
 
-    return this.http.get<Usuario>(this.apiServerUrl+'/usuario/traer');
+    return this.http.get<Usuario>(this.apiServerUrl+'/usuario/traer/43');
 
 
    }
