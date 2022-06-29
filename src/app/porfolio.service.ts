@@ -26,54 +26,28 @@ export class PorfolioService {
 
    public getUser():Observable<Usuario>{
 
-    return this.http.get<Usuario>(this.apiServerUrl+'/usuario/traer/43');
+    return this.http.get<Usuario>(this.apiServerUrl+'/usuario/traer/1');
 
 
    }
 
-   public updateUser(usuario:Usuario):Observable<Usuario>{
+   public updateUser(usuario:Usuario, id:number):Observable<any>{
 
-   return this.http.put<Usuario>(`${this.apiServerUrl}/usuario/editar`,usuario)
+   return this.http.put<any>(this.apiServerUrl+"/usuario/editar/"+id,usuario);
    
  
    }
 
 
 
-   
-    obtenerNombre():Observable<any>{
+   actualizarExperiencia(data:any, id:number):Observable<any>{
 
-    return this.http.get<any>(this.ApiUrlNombre)
-          
-    }
-    obtenerEspecialidad():Observable<any>{
-
-      return this.http.get<any>(this.ApiUrlEspecialidad)
-            
-      }
-    obtenerDescripcion():Observable<any>{
-
-      return this.http.get<any>(this.ApiUrlDescripcion)
-            
-      }
-
+    return this.http.put<any>(this.ApiUrlExperiencia+"/"+id,data)
     
-  actualizarNombre(nombre:any, id:number):Observable<any>{
-   
-    return this.http.put<any>(this.ApiUrlNombre+"/"+id,nombre) 
-}
   
-actualizarEspecialidad(especialidad:any, id:number):Observable<any>{
+  }
    
-  return this.http.put<any>(this.ApiUrlEspecialidad+"/"+id,especialidad)
-
-}
-   
-actualizarDescripcion(descripcion:any, id:number):Observable<any>{
-   
-  return this.http.put<any>(this.ApiUrlDescripcion+"/"+id,descripcion) 
-}
-
+  
 
 
 
@@ -99,12 +73,6 @@ obtenerExperiencia():Observable<any>{
 
 
   
-actualizarExperiencia(data:any, id:number):Observable<any>{
-
-  return this.http.put<any>(this.ApiUrlExperiencia+"/"+id,data)
-  
-
-}
 
 borrarExperiencia(id:any){
 

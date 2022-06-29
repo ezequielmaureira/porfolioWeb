@@ -14,46 +14,19 @@
           
           <tr>
             
-            <td id="usuario">{{usuario.nombre}}</td>
+            <td id="usuario">{{usuarioModel.nombre}}
+
+              {{usuarioModel.apellido}}
+            </td>
           
-          <td><button type="button" (click)="editarNombre(usuario)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+          <td id="usuario"><button type="button" (click)="editarUsuario(usuarioModel.nombre)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
     <i class="fa-solid fa-pen"></i> </button></td>
           </tr>
          
           
   </div>
 
-  <!--Especialidad-->
-
-  <div class="ESPECIALIDAD">
   
-    <tr *ngFor="let n of Espec" >
-      
-      <td>{{n.especialidad}}</td>
-    
-    <td><button type="button" (click)="editarEspecialidad(n)"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#ModalEspecialidad">
-<i class="fa-solid fa-pen"></i> </button></td>
-    </tr>
-   
-    
-</div>
- <!--descripcion -->
-
-
-<div class="DESCRIPCION">
-
-    
-  <tr *ngFor="let n of Desc" >
-    <td class="descripcion">{{n.descripcion}}</td>
-    <td><button type="button"(click)="editarDescripcion(n)" class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modaldescripcion">
-        <i class="fa-solid fa-pen"></i> </button></td>
-  </tr>
-   
-  
-   
- 
-
-</div>
 </div>
 <!-- Modal Nombre  -->
 <div class="modal fade" id="Modalnombre" tabindex="-1" aria-labelledby="nombreModalLabel" aria-hidden="true">
@@ -64,7 +37,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form [formGroup]="formNombre">
+          <form [formGroup]="formUsuario">
             <div class="mb-3">
               <label for="Nombre" class="form-label">Nombre</label>
               <input type="text" formControlName="nombre" class="form-control" id="Nombre" aria-describedby="Nombre">
@@ -87,63 +60,3 @@
 
 
   
-
-<!-- Modal Especialidad  -->
-<div class="modal fade" id="ModalEspecialidad" tabindex="-1" aria-labelledby="EspecialidadModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="EspecialidadModalLabel">Especialidad</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formEspecialidad">
-          <div class="mb-3">
-            <label for="Especialidad" class="form-label"></label>
-            <input type="text" formControlName="especialidad" class="form-control" id="Especialidad" aria-describedby="Especialidad">
-            <div id="especialidad" class="form-text">Debe Agregar su especialidad</div>
-          </div>
-           
-        </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-     
-        <button type="button" 
-        (click)="actualizarEspecialidad()" data-bs-dismiss="modal"
-        class="btn btn-primary">Actualizar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Modal Descripcion  -->
-<div class="modal fade" id="Modaldescripcion" tabindex="-1" aria-labelledby="DescripcionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="DescripcionModalLabel">Descripcion de perfil</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formDescripcion">
-          <div class="mb-3">
-            <label for="Descripcion" class="form-label"></label>
-            <textarea type="text" formControlName="descripcion" class="form-control" id="Descripcion" aria-describedby="Descripcion"></textarea>
-            <div id="descripcion" class="form-text">Debe Agregar su Descripcion</div>
-          </div>
-           
-        </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-         
-        <button type="button" (click)="actualizarDesc()"data-bs-dismiss="modal"
-        
-        class="btn btn-primary">Actualizar</button>
-      </div>
-    </div>
-  </div>
-</div>

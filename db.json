@@ -2,7 +2,7 @@
   "Nombre": [
     {
       "id": 1,
-      "nombre": "Ezequiel Rene Maureira"
+      "nombre": "toams"
     }
   ],
   "Especialidad": [
@@ -64,12 +64,6 @@
     {
       "id": 7,
       "nombre": "eze",
-      "grado": "30",
-      "idPersona": 1
-    },
-    {
-      "id": 8,
-      "nombre": "nadia",
       "grado": "30",
       "idPersona": 1
     }
