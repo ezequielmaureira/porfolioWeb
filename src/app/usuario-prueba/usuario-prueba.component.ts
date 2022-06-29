@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../Models/Usuario';
+import { UserModel } from '../Models/Usuario';
 import { PorfolioService } from '../porfolio.service';
 @Component({
   selector: 'app-usuario-prueba',
@@ -9,7 +9,7 @@ import { PorfolioService } from '../porfolio.service';
 })
 export class UsuarioPruebaComponent implements OnInit {
 
- usuario:Usuario=new Usuario("","","","","");
+ usuario:UserModel=new UserModel();
 
   
 

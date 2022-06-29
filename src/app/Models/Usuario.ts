@@ -1,4 +1,4 @@
-export class Usuario
+export class UserModel
 {
 
 id:number;
