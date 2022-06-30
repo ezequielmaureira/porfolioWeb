@@ -6,6 +6,8 @@ import { AcercaComponent } from './componentesFuncionales/acerca/acerca.componen
 import { environment } from 'src/environments/environment';
 import { UserModel} from './Models/Usuario';
 
+
+const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
 @Injectable({
   providedIn: 'root'
 })
@@ -26,17 +28,18 @@ export class PorfolioService {
 
    public getUser():Observable<UserModel>{
 
-    return this.http.get<UserModel>(this.apiServerUrl+'/usuario/traer/1');
+    return this.http.get<UserModel>(this.apiServerUrl+'/usuario/traer/43');
 
 
    }
 
-   public updateUser(usuario:UserModel, id:number):Observable<any>{
+   public updateUser(id:number, usuario:UserModel):Observable<any>{
 
-   return this.http.put<any>(this.apiServerUrl+"/usuario/editar/"+id,usuario);
+   return this.http.put<any>(`${this.apiServerUrl}/usuario/editar/${id}`,usuario);
    
  
    }
+   
 
 
 

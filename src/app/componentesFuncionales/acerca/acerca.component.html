@@ -9,3 +9,111 @@
         </div>
    <!--Nombre -->     
      
+
+
+     
+   <table class="table">
+  
+    <thead>
+    <tr>
+    <th scope="col">nombre</th>
+    <th scope="col">Apellido</th>
+
+    
+    <th scope="col">titulo</th>
+    
+    <th scope="col">descripcion</th>
+    
+    
+    <th scope="col">fotoPerfil</th>
+    
+    
+    </tr>
+    </thead>
+
+
+
+    
+    <tbody >
+    <tr>
+
+      <td>{{datosUsuario.nombre}}</td>
+      <td>{{datosUsuario.apellido}}</td>
+      <td>{{datosUsuario.titulo}}</td>
+      <td>{{datosUsuario.descripcion}}</td>
+      <td>{{datosUsuario.fotoPerfil}}</td>
+      
+    </tr>
+      
+  </tbody>
+  
+  
+  
+
+  
+  
+  
+  
+  </table>
+
+  <td>
+    <button type="button" (click)="editarUsuario(datosUsuario)" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-pen"></i></button>
+  </td>
+ 
+  
+  <!-- Modal Nombre -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formUsuario" class="row g-3 needs-validation" novalidate>
+            <div class="mb-3">
+            
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" formControlName='nombre' class="form-control" id="nombre" required>
+                <div id="nombre" class="form-text">Debe Agregar su nombre</div>
+              </div>
+              <div class="mb-3">
+            
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" formControlName="apellido" class="form-control" id="apellido" aria-describedby="fin">
+                <div id="apellido" class="form-text">Debe Agregar su Apellido.</div>
+              </div>
+              <div class="mb-3">
+            
+            
+            
+              <label for="titulo" class="form-label">titulo</label>
+              <input type="text" formControlName="titulo" class="form-control" id="titulo" aria-describedby="titulo">
+              <div id="titulo" class="form-text">Debe Agregar su titulo.</div>
+            </div>
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripcion</label>
+              <input type="text"formControlName="descripcion" class="form-control" id="descripcion" aria-describedby="descripcion">
+              <div id="descripcion" class="form-text">Debe su descripcion</div>
+            </div>
+            <div class="mb-3">
+          
+              <label for="fotoPerfil" class="form-label">fotoPerfil</label>
+              <input type="text" formControlName="fotoPerfil"class="form-control" id="fotoPerfil" aria-describedby="fotoPerfil">
+              <div id="fotoPerfil" class="form-text">Debe Agregar su foto de perfil.</div>
+            </div>
+  
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         
+          <button type="submit" 
+          (click)="actualizarUsuario(datosUsuario)"
+          class="btn btn-primary"data-bs-dismiss="modal"   >Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
