@@ -48,8 +48,9 @@
   "Competencia": [
     {
       "id": 4,
-      "nombre": "Java",
-      "grado": "80"
+      "nombre": "react",
+      "grado": "80",
+      "idPersona": 1
     },
     {
       "id": 5,

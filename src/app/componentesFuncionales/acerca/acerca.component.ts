@@ -66,7 +66,7 @@ actualizarUsuario(usuario:UserModel):void{
   this.usuarioModel.descripcion=this.formUsuario.value.descripcion;
   this.usuarioModel.fotoPerfil=this.formUsuario.value.fotoPerfil;
   
-  this.api.updateUser(this.usuarioModel)
+  this.api.updateUser(this.usuarioModel,43)
   .subscribe(res=>{
   
   let ref=document.getElementById('cancel')

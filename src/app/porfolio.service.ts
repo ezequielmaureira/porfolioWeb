@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Ifnombre } from './componentesFuncionales/acerca/nombre';
 import { Observable } from 'rxjs';
 import { AcercaComponent } from './componentesFuncionales/acerca/acerca.component';
 import { environment } from 'src/environments/environment';
@@ -26,16 +25,16 @@ export class PorfolioService {
   constructor(private http:HttpClient) { }
 
 
-   public getUser():Observable<UserModel>{
+   public getUser(){
 
     return this.http.get<UserModel>(this.apiServerUrl+'/usuario/traer/43');
 
 
    }
 
-   public updateUser(id:number, usuario:UserModel):Observable<any>{
+   public updateUser( obj:UserModel,id:number){
 
-   return this.http.put<any>(`${this.apiServerUrl}/usuario/editar/${id}`,usuario);
+   return this.http.put(this.apiServerUrl+'/usuario/editar/'+id,obj);
    
  
    }

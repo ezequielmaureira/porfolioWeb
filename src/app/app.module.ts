@@ -14,7 +14,7 @@ import { PorfolioService } from './porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgChartsModule } from 'ng2-charts';
-import { UsuarioPruebaComponent } from './usuario-prueba/usuario-prueba.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,7 @@ import { UsuarioPruebaComponent } from './usuario-prueba/usuario-prueba.componen
     EducacionComponent,
     CompetenciasComponent,
     ProyectosComponent,
-    UsuarioPruebaComponent,
+  
    
   ],
   imports: [
