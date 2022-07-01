@@ -15,7 +15,7 @@ export class AcercaComponent implements OnInit {
   
   formUsuario!:FormGroup;
   usuarioModel:UserModel=new UserModel();
-  datosUsuario!:any;
+  datosUsuario!:UserModel;
    
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
 

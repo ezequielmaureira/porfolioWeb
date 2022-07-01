@@ -39,6 +39,43 @@ export class PorfolioService {
  
    }
    
+   
+   
+agregarCompetencia(data:any):Observable<any>{
+
+  return this.http.post<any>(this.apiServerUrl+'/competencia/crear/',data)
+  
+ 
+}
+
+
+
+
+
+obtenerCompetencia():Observable<any>{
+
+  return this.http.get<any>(this.apiServerUrl+'/competencia/traer')
+  
+
+  }
+
+
+
+
+
+actualizarCompetencia(data:any, id:number):Observable<any>{
+
+  return this.http.put<any>(this.ApiUrlCompetencia+"/"+id,data)
+  
+
+}
+borrarCompetencia(id:any){
+
+  return this.http.delete(this.ApiUrlCompetencia+"/"+id)
+  
+  
+
+}
 
 
 
@@ -119,42 +156,6 @@ borrarEducacion(id:any){
 
 }
 
-
-agregarCompetencia(data:any):Observable<any>{
-
-  return this.http.post<any>(this.ApiUrlCompetencia,data)
-  
- 
-}
-
-
-
-
-
-obtenerCompetencia():Observable<any>{
-
-  return this.http.get<any>(this.ApiUrlCompetencia)
-  
-
-  }
-
-
-
-
-
-actualizarCompetencia(data:any, id:number):Observable<any>{
-
-  return this.http.put<any>(this.ApiUrlCompetencia+"/"+id,data)
-  
-
-}
-borrarCompetencia(id:any){
-
-  return this.http.delete(this.ApiUrlCompetencia+"/"+id)
-  
-  
-
-}
 
 
 
