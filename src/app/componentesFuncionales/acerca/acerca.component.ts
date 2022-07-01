@@ -46,12 +46,12 @@ export class AcercaComponent implements OnInit {
              this.formUsuario.controls["titulo"].setValue(this.datosUsuario.titulo);
              this.formUsuario.controls["descripcion"].setValue(this.datosUsuario.descripcion);
              this.formUsuario.controls["fotoPerfil"].setValue(this.datosUsuario.fotoPerfil);
-             console.log(row)
+          
           }
   
 
         
-mostrarUsuario(data:any){
+mostrarUsuario(data:UserModel){
   this.api.getUser().subscribe(data=>{
 
 this.datosUsuario=data;
@@ -59,7 +59,7 @@ this.datosUsuario=data;
   })
 }
       
-actualizarUsuario(usuario:UserModel):void{
+actualizarUsuario(usuario:UserModel){
   this.usuarioModel.nombre=this.formUsuario.value.nombre;
   this.usuarioModel.apellido=this.formUsuario.value.apellido;
   this.usuarioModel.titulo=this.formUsuario.value.titulo;
@@ -72,19 +72,16 @@ actualizarUsuario(usuario:UserModel):void{
   let ref=document.getElementById('cancel')
    ref?.click();
    this.formUsuario.reset(); 
-  this.mostrarUsuario(res);
+  this.mostrarUsuario(this.datosUsuario);
   
   this.formUsuario.reset(); 
-  this.mostrarUsuario(res);
+  this.mostrarUsuario(this.datosUsuario);
   
   
   })
   
   }
-  actualizarExperiencia(){}
-  agregaExperiencia(){}
- mostrarAgregar(){}
- mostrarActualizar(){}
+
 
 
       }
