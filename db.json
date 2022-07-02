@@ -19,14 +19,6 @@
   ],
   "Experiencia": [
     {
-      "id": 4,
-      "inicio": "2022",
-      "fin": "2025",
-      "empresa": "google",
-      "puesto": "programador junior ",
-      "actividad": "Lo que debe tener un gerente de ventas\nFormación específica en ventas, comercial y gestión de equipos. Capacidad para administrar, formar y motivar a un equipo de personal de ventas. Cualidades de liderazgo, entusiasmo e iniciativa. Capacidad para resolver los problemas."
-    },
-    {
       "id": 6,
       "inicio": "2025",
       "fin": "2026",
@@ -41,8 +33,8 @@
       "inicio": "2010",
       "fin": "2025",
       "instituccion": "",
-      "titulo": "programador junior ",
-      "institucion": "google"
+      "titulo": "perito mercantil",
+      "institucion": "domingo savio"
     }
   ],
   "Competencia": [

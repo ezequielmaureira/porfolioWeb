@@ -64,11 +64,7 @@ let ref=document.getElementById('cancel')
 
 
  },
- err=>{
-
-alert("algo paso");
-
- }
+ 
 
  )}
 

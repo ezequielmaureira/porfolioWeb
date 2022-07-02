@@ -65,13 +65,13 @@ obtenerCompetencia():Observable<any>{
 
 actualizarCompetencia(data:any, id:number):Observable<any>{
 
-  return this.http.put<any>(this.ApiUrlCompetencia+"/"+id,data)
+  return this.http.put<any>(this.apiServerUrl+'/competencia/editar/'+id,data)
   
 
 }
 borrarCompetencia(id:any){
 
-  return this.http.delete(this.ApiUrlCompetencia+"/"+id)
+  return this.http.delete(this.apiServerUrl+'/competencia/borrar/'+id)
   
   
 

@@ -14,6 +14,7 @@ import { PorfolioService } from './porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgChartsModule } from 'ng2-charts';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgChartsModule } from 'ng2-charts';
     EducacionComponent,
     CompetenciasComponent,
     ProyectosComponent,
+    InicioSesionComponent,
   
    
   ],
