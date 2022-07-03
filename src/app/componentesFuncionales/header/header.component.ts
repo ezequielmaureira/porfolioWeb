@@ -18,14 +18,35 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  Registrar(){
+    console.log(this.usuario);
+    const {email,clave}=this.usuario;
+    this.authService.register(email,clave).then(res=>{  
+      console.log("usted esta registrado:",res)
+      alert(email);
+  
+    })
+  
+    }
+
   Ingresar(){
   console.log(this.usuario);
   const {email,clave}=this.usuario;
-  this.authService.register(email,clave).then(res=>{  
-    console.log("se registro:",res)
+  this.authService.login(email,clave).then(res=>{  
+    console.log("usted esta logueado:",res)
 
   })
 
   }
+  IngresarConGoogle(){
+     const {email,clave}=this.usuario;
+    this.authService.loginWithGoogle(email,clave).then(res=>{  
+      console.log("se logueo con google:",res)
+      
+  
+    })
+  
+    }
 
 }

@@ -19,6 +19,7 @@ import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { AngularFireModule } from '@angular/fire/compat';
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyC31b4rtKmv7xN5n4OwoNg0Oe5Vp0kkxtg",
   authDomain: "authporfolio.firebaseapp.com",
@@ -40,6 +41,7 @@ const firebaseConfig = {
     CompetenciasComponent,
     ProyectosComponent,
     InicioSesionComponent,
+   
   
    
   ],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ChartData, ChartEvent, ChartType,ChartConfiguration } from 'chart.js';
+import { AuthService } from 'src/app/auth.service';
 import { PorfolioService } from 'src/app/porfolio.service';
 import { compModel } from './competenciasModel';
 @Component({
@@ -11,14 +12,19 @@ import { compModel } from './competenciasModel';
 export class CompetenciasComponent  {
    
 
+  usuario={
+    email:'',
+    clave:''
+    }
 
   formValue!:FormGroup;
   CompetenciasModel:compModel=new compModel();
   datosCompetencia!:any;
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
-  
-   constructor(private creadorForm:FormBuilder,private api:PorfolioService){}
+  mostrarBotones!:boolean;
+  NomostrarBotones!:boolean;
+   constructor(private creadorForm:FormBuilder,private api:PorfolioService ,private authService:AuthService){}
 
 
   ngOnInit(): void {
@@ -127,40 +133,24 @@ this.mostrarCompetencia(res);
 
 
 })
-
 }
 
 
 
 
+}
 
 
-
-
-
-   A1:number=85;
-   // Doughnut
-   public radarChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
-  };
   
-  public radarChartLabels: string[] = [ 'HTML', 'ANGULAR', 'INGLES', 'CSS', 'JAVASCRIPT', 'JAVA' ];
+ 
 
-  public radarChartData: ChartData<'radar'> = {
-    labels: this.radarChartLabels,
-    datasets: [
-      { data: [ this.A1, 10, 83, 81, 56, 100 ], label: 'desempeño' },
-     
-    ]
-  };
-  public radarChartType: ChartType = 'radar';
 
-  // events
-  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
 
-  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-}
+
+
+
+
+
+
+
+
