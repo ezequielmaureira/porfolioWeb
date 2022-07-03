@@ -134,6 +134,16 @@ this.mostrarCompetencia(res);
 
 })
 }
+IngresarConGoogle(){
+  const {email,clave}=this.usuario;
+ this.authService.loginWithGoogle(email,clave).then(res=>{  
+   console.log("se logueo con google:",res)
+   this.NomostrarBotones=false;
+   
+
+ })
+
+ }
 
 
 
