@@ -48,5 +48,18 @@ export class HeaderComponent implements OnInit {
     })
   
     }
+    ObtenerUsuario(){
+    this.authService.getUserLogged().subscribe(res=>{
+
+
+      console.log(res?.email)
+    });
+
+    }
+    Logout(){
+      this.authService.logout();
+
+
+    }
 
 }

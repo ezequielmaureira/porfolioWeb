@@ -52,6 +52,15 @@ catch(err){
  }
   }
 
+  getUserLogged()
+  {
+    return this.afauth.authState
+  }
+  logout(){
+  this.afauth.signOut();
+
+
+  }
 
   }
 

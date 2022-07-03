@@ -10,7 +10,7 @@
     <div class="cabecera">
       <nav class="navbar">
           <h1>Competencias</h1>
-        <button type="button"   (click)="clickNuevaCompetencia()" *ngIf="NomostrarBotones"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#compModal">
+        <button type="button"   (click)="clickNuevaCompetencia()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#compModal">
         
         Nueva Competencia </button>
     
@@ -46,7 +46,7 @@
      
   
   <td>
-    <button type="button" (click)="editarCompetencia(row)" *ngForm="NoMostrarBotones" class="boton" data-bs-toggle="modal" data-bs-target="#compModal"> <i class="fa-solid fa-pen"></i></button>
+    <button type="button" (click)="editarCompetencia(row)" *ngIf="userLogged|async as user" class="boton" data-bs-toggle="modal" data-bs-target="#compModal"> <i class="fa-solid fa-pen"></i></button>
   </td>
  
   <td>

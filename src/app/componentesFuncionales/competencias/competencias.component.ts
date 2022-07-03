@@ -10,7 +10,7 @@ import { compModel } from './competenciasModel';
   styleUrls: ['./competencias.component.css']
 })
 export class CompetenciasComponent  {
-   
+   userLogged=this.authService.getUserLogged();
 
   usuario={
     email:'',
@@ -23,7 +23,7 @@ export class CompetenciasComponent  {
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
   mostrarBotones!:boolean;
-  NomostrarBotones!:boolean;
+  
    constructor(private creadorForm:FormBuilder,private api:PorfolioService ,private authService:AuthService){}
 
 
@@ -38,7 +38,7 @@ export class CompetenciasComponent  {
 
     })
     this.mostrarCompetencia(this.datosCompetencia);
-
+  
 
   }
 
@@ -78,6 +78,7 @@ mostrarCompetencia(data:any){
   this.api.obtenerCompetencia().subscribe(data=>{
 
 this.datosCompetencia=data;
+
 
   })
 
@@ -134,21 +135,16 @@ this.mostrarCompetencia(res);
 
 })
 }
-IngresarConGoogle(){
-  const {email,clave}=this.usuario;
- this.authService.loginWithGoogle(email,clave).then(res=>{  
-   console.log("se logueo con google:",res)
-   this.NomostrarBotones=false;
-   
 
- })
+
+
 
  }
 
 
 
 
-}
+
 
 
   
