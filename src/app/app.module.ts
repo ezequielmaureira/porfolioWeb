@@ -37,7 +37,7 @@ import {AngularFireAuth} from '@angular/fire';
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
-    AngularFireAuth,
+   
     
   ],
   providers: [PorfolioService],
