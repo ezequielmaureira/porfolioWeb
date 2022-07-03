@@ -7,8 +7,8 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-
+  userLogged=this.authService.getUserLogged();
+ 
   usuario={
   email:'',
   clave:''
