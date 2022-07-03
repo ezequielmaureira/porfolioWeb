@@ -14,7 +14,7 @@ import { PorfolioService } from 'src/app/porfolio.service';
 export class AcercaComponent implements OnInit {
   
   formUsuario!:FormGroup;
-  usuarioModel:UserModel;
+  usuarioModel:UserModel=new UserModel
   datosUsuario!:UserModel;
    
   constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }

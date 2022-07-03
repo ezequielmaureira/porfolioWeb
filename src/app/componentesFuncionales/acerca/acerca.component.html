@@ -3,7 +3,7 @@
   <!--foto -->
   <div class="FOTOS"> 
     <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>
-      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" data-bs-target="#Modalnombre">
+      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" >
           <i class="fa-solid fa-pen"></i> 
           </button> </span>
         </div>
@@ -35,7 +35,7 @@
 
     
     <tbody >
-    <tr >
+    <tr *ngIf="datosUsuario">
 
       <td>{{datosUsuario.nombre}}</td>
       <td>{{datosUsuario.apellido}}</td>
@@ -57,12 +57,12 @@
   </table>
 
   <td>
-    <button type="button" (click)="editarUsuario(datosUsuario)" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa-solid fa-pen"></i></button>
+    <button type="button" (click)="editarUsuario(datosUsuario)" class="btn btn-default btn-lg" data-bs-toggle="modal" data-bs-target="#editarModal"> <i class="fa-solid fa-pen"></i></button>
   </td>
  
   
   <!-- Modal Nombre -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
