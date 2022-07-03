@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 import { PorfolioService } from 'src/app/porfolio.service';
 import { eduModel} from './educacionModel';
 
@@ -9,6 +10,7 @@ import { eduModel} from './educacionModel';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+  userLogged=this.authService.getUserLogged();
 
   
 
@@ -18,7 +20,7 @@ export class EducacionComponent implements OnInit {
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
   
-   constructor(private creadorForm:FormBuilder,private api:PorfolioService){}
+   constructor(private creadorForm:FormBuilder,private api:PorfolioService ,private authService:AuthService){}
 
 
   ngOnInit(): void {

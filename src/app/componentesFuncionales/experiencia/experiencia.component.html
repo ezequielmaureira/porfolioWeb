@@ -9,7 +9,7 @@
       <div class="cabecera">
         <nav class="navbar">
             <h1>Experiencia</h1>
-          <button type="button"   (click)="clickNuevaEmpresa()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#empresaModal">
+          <button type="button"   (click)="clickNuevaEmpresa()" *ngIf="userLogged|async as user"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#empresaModal">
           
           Nueva Empresa </button>
       
@@ -53,12 +53,12 @@
         <td>{{row.actividad}}</td>
     
     <td>
-      <button type="button" (click)="editarExperiencia(row)" class="boton" data-bs-toggle="modal" data-bs-target="#empresaModal"> <i class="fa-solid fa-pen"></i></button>
+      <button type="button" (click)="editarExperiencia(row)" *ngIf="userLogged|async as user"class="boton" data-bs-toggle="modal" data-bs-target="#empresaModal"> <i class="fa-solid fa-pen"></i></button>
     </td>
    
     <td>
   
-      <button (click)="eliminarExperiencia(row.id)" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <button (click)="eliminarExperiencia(row.id)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
       
     </td>
     

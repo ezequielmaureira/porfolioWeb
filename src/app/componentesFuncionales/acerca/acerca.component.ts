@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 import { UserModel } from 'src/app/Models/Usuario';
 import { PorfolioService } from 'src/app/porfolio.service';
 
@@ -12,12 +13,12 @@ import { PorfolioService } from 'src/app/porfolio.service';
   styleUrls: ['./acerca.component.css']
 })
 export class AcercaComponent implements OnInit {
-  
+  userLogged=this.authService.getUserLogged();
   formUsuario!:FormGroup;
   usuarioModel:UserModel=new UserModel
   datosUsuario!:UserModel;
    
-  constructor(private creadorForm:FormBuilder,private api:PorfolioService) { }
+  constructor(private creadorForm:FormBuilder,private api:PorfolioService,private authService:AuthService) { }
 
   ngOnInit(): void {
    

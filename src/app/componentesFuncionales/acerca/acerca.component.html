@@ -3,7 +3,7 @@
   <!--foto -->
   <div class="FOTOS"> 
     <img class="derecha"id="perfil" src="https://img.blogs.es/anexom/wp-content/uploads/2021/12/perfil-1024x754.jpg" alt="" ><span>
-      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" >
+      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" *ngIf="userLogged|async as user">
           <i class="fa-solid fa-pen"></i> 
           </button> </span>
         </div>
@@ -57,7 +57,7 @@
   </table>
 
   <td>
-    <button type="button" (click)="editarUsuario(datosUsuario)" class="btn btn-default btn-lg" data-bs-toggle="modal" data-bs-target="#editarModal"> <i class="fa-solid fa-pen"></i></button>
+    <button type="button" (click)="editarUsuario(datosUsuario)" *ngIf="userLogged|async as user" class="btn btn-default btn-lg" data-bs-toggle="modal" data-bs-target="#editarModal"> <i class="fa-solid fa-pen"></i></button>
   </td>
  
   

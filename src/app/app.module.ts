@@ -14,7 +14,6 @@ import { PorfolioService } from './porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgChartsModule } from 'ng2-charts';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -40,7 +39,7 @@ const firebaseConfig = {
     EducacionComponent,
     CompetenciasComponent,
     ProyectosComponent,
-    InicioSesionComponent,
+  
    
   
    

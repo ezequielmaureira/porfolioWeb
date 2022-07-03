@@ -9,7 +9,7 @@
       <div class="cabecera">
         <nav class="navbar">
             <h1>Educacion</h1>
-          <button type="button"   (click)="clickNuevaEducacion()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eduModal">
+          <button type="button"   (click)="clickNuevaEducacion()"*ngIf="userLogged|async as user" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eduModal">
           
           Nueva Educacion </button>
       
@@ -53,12 +53,12 @@
        
     
     <td>
-      <button type="button" (click)="editarEducacion(row)" class="boton" data-bs-toggle="modal" data-bs-target="#eduModal"> <i class="fa-solid fa-pen"></i></button>
+      <button type="button" (click)="editarEducacion(row)"*ngIf="userLogged|async as user" class="boton" data-bs-toggle="modal" data-bs-target="#eduModal"> <i class="fa-solid fa-pen"></i></button>
     </td>
    
     <td>
   
-      <button (click)="eliminarEducacion(row.id)" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <button (click)="eliminarEducacion(row.id)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
       
     </td>
     
