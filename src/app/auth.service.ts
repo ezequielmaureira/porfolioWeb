@@ -1,10 +1,57 @@
 import { Injectable } from '@angular/core';
-import{AngularFireAuth} from '@angular/fire';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private afauth:AngularFireAuth) { 
+  }
+
+
+ 
+  async register(email:string, clave:string){
+    try{
+   return await this.afauth.createUserWithEmailAndPassword(email,clave);
+   
+   
+    }
+   catch(err){
+     console.log("error en login:",err);
+     return null;
+   }
+    }
+
+
+
+
+
+  
+ async login(email:string, clave:string){
+ try{
+return await this.afauth.signInWithEmailAndPassword(email,clave);
+
+
+ }
+catch(err){
+  console.log("error en login:",err);
+  return null;
 }
+ }
+
+ async loginWithGoogle(email:string, clave:string){
+  try{
+ return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+ 
+ 
+  }
+ catch(err){
+   console.log("error en login con google:",err);
+   return null;
+ }
+  }
+
+
+  }
+

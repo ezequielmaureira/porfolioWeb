@@ -25,6 +25,14 @@
       "empresa": "dsa",
       "puesto": "dsa",
       "actividad": "asda"
+    },
+    {
+      "id": 7,
+      "inicio": "eze",
+      "fin": "asd",
+      "empresa": "ads",
+      "puesto": "ads",
+      "actividad": "asd"
     }
   ],
   "Educacion": [

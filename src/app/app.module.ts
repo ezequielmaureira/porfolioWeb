@@ -15,7 +15,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgChartsModule } from 'ng2-charts';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-import {AngularFireAuth} from '@angular/fire';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import { AngularFireModule } from '@angular/fire/compat';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC31b4rtKmv7xN5n4OwoNg0Oe5Vp0kkxtg",
+  authDomain: "authporfolio.firebaseapp.com",
+  projectId: "authporfolio",
+  storageBucket: "authporfolio.appspot.com",
+  messagingSenderId: "398284255870",
+  appId: "1:398284255870:web:125b48a40a05a5f0149e2f",
+  measurementId: "G-JYNDM59PWG"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +50,8 @@ import {AngularFireAuth} from '@angular/fire';
     ReactiveFormsModule,
     HttpClientModule,
     NgChartsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
+    
    
     
   ],
