@@ -8,14 +8,17 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class HeaderComponent implements OnInit {
   userLogged=this.authService.getUserLogged();
- 
+  
   usuario={
   email:'',
   clave:''
   }
+  NoMostrarLogin!:boolean;
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+
+    this.NoMostrarLogin=true;
   }
 
 
@@ -24,8 +27,8 @@ export class HeaderComponent implements OnInit {
     const {email,clave}=this.usuario;
     this.authService.register(email,clave).then(res=>{  
       console.log("usted esta registrado:",res)
-      alert(email);
-  
+      alert("usted se Registro con su email:"+email);
+     
     })
   
     }
@@ -34,15 +37,21 @@ export class HeaderComponent implements OnInit {
   console.log(this.usuario);
   const {email,clave}=this.usuario;
   this.authService.login(email,clave).then(res=>{  
+    
     console.log("usted esta logueado:",res)
+    alert("usted esta Logueado con su email:"+email);
+    this.NoMostrarLogin=false;
+    
 
   })
 
   }
   IngresarConGoogle(){
+   
      const {email,clave}=this.usuario;
     this.authService.loginWithGoogle(email,clave).then(res=>{  
       console.log("se logueo con google:",res)
+     
       
   
     })
@@ -58,8 +67,11 @@ export class HeaderComponent implements OnInit {
     }
     Logout(){
       this.authService.logout();
+      window.location.reload()
 
 
     }
+ 
+
 
 }

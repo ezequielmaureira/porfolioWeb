@@ -6,8 +6,8 @@
 
 
 
-         <button type="submit"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalLoginForm">LOGIN</button>
-         <button type="submit"  class="btn btn-success" (click)="Logout()" *ngIf="userLogged|async as user">LOGOUT </button>
+         <button type="submit"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalLoginForm" *ngIf="NoMostrarLogin">LOGIN</button>
+         <button type="submit"  class="btn btn-success" (click)="Logout()" *ngIf="userLogged|async as user">LOGOUT  </button>
       
     
 
@@ -80,9 +80,9 @@
       
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-default" (click)="Ingresar()">Login</button>
-              <button class="btn btn-info" (click)="IngresarConGoogle()">Login With Google</button>
-              <button class="btn btn-info" (click)="Registrar()">Registrar</button>
+              <button class="btn btn-default" (click)="Ingresar()"data-bs-dismiss="modal">Login</button>
+              <button class="btn btn-info" (click)="IngresarConGoogle()"data-bs-dismiss="modal">Login With Google</button>
+              <button class="btn btn-info" (click)="Registrar()"data-bs-dismiss="modal">Registrar</button>
             </div>
           </div>
         </div>
