@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
      const {email,clave}=this.usuario;
     this.authService.loginWithGoogle(email,clave).then(res=>{  
       console.log("se logueo con google:",res)
-     
+      this.NoMostrarLogin=false;
       
   
     })
