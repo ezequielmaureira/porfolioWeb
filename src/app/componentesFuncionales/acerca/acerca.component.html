@@ -2,12 +2,10 @@
   <div class="container-fluid">
   <!--foto -->
   <div class="FOTOS"> 
-    <img class="derecha"id="perfil" src={{datosUsuario.fotoPerfil}} alt="" ><span>
-      <button type="button"  class = "btn btn-default btn-lg"data-bs-toggle="modal" *ngIf="userLogged|async as user">
-          <i class="fa-solid fa-pen"></i> 
-          </button> </span>
-        </div>
-   <!--Nombre -->     
+    <img class="derecha"id="perfil" *ngIf="datosUsuario" src={{datosUsuario.fotoPerfil}} alt="" >
+  </div>
+  
+
    <div class="NOMBRE"*ngIf="datosUsuario" >
     
     {{datosUsuario.nombre}}
@@ -21,8 +19,8 @@
     <h2>{{datosUsuario.descripcion}}</h2>
 
   </div>
-  
-  
+
+
 
 
   <tr></tr>

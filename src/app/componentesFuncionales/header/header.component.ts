@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
-
+import { UserModel } from 'src/app/Models/Usuario';
+import { PorfolioService } from 'src/app/porfolio.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  datosUsuario!:UserModel;
+  usuarioModel:UserModel=new UserModel
   userLogged=this.authService.getUserLogged();
   
   usuario={
@@ -14,7 +17,7 @@ export class HeaderComponent implements OnInit {
   clave:''
   }
   NoMostrarLogin!:boolean;
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private api:PorfolioService) { }
 
   ngOnInit(): void {
 
@@ -71,7 +74,12 @@ export class HeaderComponent implements OnInit {
 
 
     }
- 
-
-
+    mostrarUsuario(data:UserModel){
+      this.api.getUser().subscribe(data=>{
+    
+    this.datosUsuario=data;
+    
+    
+      })
+    }
 }

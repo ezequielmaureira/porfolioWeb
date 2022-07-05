@@ -12,7 +12,7 @@
     
 
          <div class="icon">
-
+          <h1 *ngIf="datosUsuario">{{datosUsuario.nombre}}</h1>
           <i class="fab fa-whatsapp fa-3x"  > </i>
           <i class="fab fa-facebook fa-3x"></i>
           <i class="fab fa-twitter-square fa-3x"></i>
@@ -21,7 +21,6 @@
 
 
 <div>
-
 
 
 </div>
@@ -37,7 +36,7 @@
         </div>
         <div class="carousel-inner" >
           <div class="carousel-item active">
-            <img src="https://img.freepik.com/foto-gratis/abra-computadora-portatil-pantalla-blanca-cama-naturaleza-contra-hermoso-paisaje-maqueta-manana-temprano_72389-2224.jpg?w=996" class="d-block w-100 " alt="...">
+            <img class="derecha"id="perfil" *ngIf="datosUsuario" src={{datosUsuario.fotoPerfil}} alt="" >
           </div>
           <div class="carousel-item">
             <img src="https://i.ibb.co/tY3fLTd/Foto-Perfil1.png" class="d-block w-100" alt="...">

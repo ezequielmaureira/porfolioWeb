@@ -7,6 +7,9 @@ apellido:String;
 titulo:String;
 descripcion:String;
 fotoPerfil:String;
+fotoBanner1:String;
+fotoBanner2:String;
+fotoBanner3:String;
 
 }
 

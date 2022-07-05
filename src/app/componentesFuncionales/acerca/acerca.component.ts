@@ -13,10 +13,15 @@ import { PorfolioService } from 'src/app/porfolio.service';
   styleUrls: ['./acerca.component.css']
 })
 export class AcercaComponent implements OnInit {
+
+
+
   userLogged=this.authService.getUserLogged();
   formUsuario!:FormGroup;
   usuarioModel:UserModel=new UserModel
   datosUsuario!:UserModel;
+ 
+  
    
   constructor(private creadorForm:FormBuilder,private api:PorfolioService,private authService:AuthService) { }
 
@@ -28,11 +33,14 @@ export class AcercaComponent implements OnInit {
       apellido:[''],
       titulo:[''],
       descripcion:[''],
-      fotoPerfil:['']
+      fotoPerfil:[''],
+      fotoBanner1:[''],
+      fotoBanner2:[''],
+      fotoBanner3:[''],
     })
 
        this.mostrarUsuario(this.datosUsuario);
-    
+     
         }
 
         editarUsuario(row:any){
@@ -47,7 +55,9 @@ export class AcercaComponent implements OnInit {
              this.formUsuario.controls["titulo"].setValue(this.datosUsuario.titulo);
              this.formUsuario.controls["descripcion"].setValue(this.datosUsuario.descripcion);
              this.formUsuario.controls["fotoPerfil"].setValue(this.datosUsuario.fotoPerfil);
-          
+             this.formUsuario.controls["fotoBanner1"].setValue(this.datosUsuario.fotoBanner1);
+             this.formUsuario.controls["fotoBanner2"].setValue(this.datosUsuario.fotoBanner2);
+             this.formUsuario.controls["fotoBanner3"].setValue(this.datosUsuario.fotoBanner3);
           }
   
 
@@ -56,6 +66,7 @@ mostrarUsuario(data:UserModel){
   this.api.getUser().subscribe(data=>{
 
 this.datosUsuario=data;
+
 
   })
 }
@@ -66,6 +77,10 @@ actualizarUsuario(usuario:UserModel){
   this.usuarioModel.titulo=this.formUsuario.value.titulo;
   this.usuarioModel.descripcion=this.formUsuario.value.descripcion;
   this.usuarioModel.fotoPerfil=this.formUsuario.value.fotoPerfil;
+  this.usuarioModel.fotoBanner1=this.formUsuario.value.fotoBanner1;
+  this.usuarioModel.fotoBanner2=this.formUsuario.value.fotoBanner2;
+  this.usuarioModel.fotoBanner3=this.formUsuario.value.fotoBanner3;
+
   
   this.api.updateUser(this.usuarioModel,43)
   .subscribe(res=>{
