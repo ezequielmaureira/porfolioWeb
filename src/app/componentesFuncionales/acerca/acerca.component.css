@@ -21,7 +21,7 @@
 
 .NOMBRE { grid-area: NOMBRE; }
 
-.FOTOS { grid-area: FOTOS;}
+
 
 .ESPECIALIDAD { grid-area: ESPECIALIDAD; }
 
@@ -40,12 +40,12 @@
 
     
  .derecha{
-   width: 250px;
-   height: 250px;
-   margin-bottom: 50px;
+   width: 350px;
+   height: 350px;
+  
    border-radius: 80%;
    border:5px solid black;
-    
+
  
    }
    .cabecera{
@@ -89,7 +89,9 @@
 
   display: inline-block;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size:xx-large;
+  
   font-style: italic;
   font-weight: bold;
+  font-size: 80px;
+  
 }

@@ -1,12 +1,12 @@
 
-  <div class="container-fluid">
+  <div class="container-fluid" >
   <!--foto -->
   <div class="FOTOS"> 
-    <img class="derecha"id="perfil" *ngIf="datosUsuario" src={{datosUsuario.fotoPerfil}} alt="" >
+   
   </div>
   
-
-   <div class="NOMBRE"*ngIf="datosUsuario" >
+  
+   <div class="NOMBRE"*ngIf="datosUsuario"  >
     
     {{datosUsuario.nombre}}
     {{datosUsuario.apellido}}
@@ -15,20 +15,23 @@
   <div class="TITULO"*ngIf="datosUsuario" >
     
    <h1>{{datosUsuario.titulo}}</h1>
-    <tr></tr>
-    <h2>{{datosUsuario.descripcion}}</h2>
+   <td>
+   
+    <button type="submit"class="btn btn-success" (click)="editarUsuario(datosUsuario)" *ngIf="userLogged|async as user" data-bs-toggle="modal" data-bs-target="#editarModal">EDITAR USUARIO</button>
+  </td>
 
   </div>
-
+    <tr></tr>
+    <div class="DESCRIPCION"*ngIf="datosUsuario" >
+    <h2>{{datosUsuario.descripcion}}</h2>
+    
+  </div>
 
 
 
   <tr></tr>
   
-  <td>
-   
-    <button type="submit"class="btn btn-success" (click)="editarUsuario(datosUsuario)" *ngIf="userLogged|async as user" data-bs-toggle="modal" data-bs-target="#editarModal">EDITAR USUARIO</button>
-  </td>
+ 
  
   
   <!-- Modal Nombre -->
@@ -63,7 +66,7 @@
             </div>
             <div class="mb-3">
               <label for="descripcion" class="form-label">Descripcion</label>
-              <input type="text"formControlName="descripcion" class="form-control" id="descripcion" aria-describedby="descripcion">
+              <textarea formControlName="descripcion" class="form-control" id="descripcion" aria-describedby="descripcion"></textarea>
               <div id="descripcion" class="form-text">Debe su descripcion</div>
             </div>
             <div class="mb-3">
@@ -72,6 +75,28 @@
               <input type="text" formControlName="fotoPerfil"class="form-control" id="fotoPerfil" aria-describedby="fotoPerfil">
               <div id="fotoPerfil" class="form-text">Debe Agregar su foto de perfil.</div>
             </div>
+
+            <div class="mb-3">
+          
+              <label for="fotoBannerl" class="form-label">fotoBanner1</label>
+              <input type="text" formControlName="fotoBanner1"class="form-control" id="fotoBanner1" aria-describedby="fotoBanner1">
+              <div id="fotoBanner1" class="form-text">Debe Agregar su foto para el primer Banner.</div>
+            </div>
+           
+            <div class="mb-3">
+          
+              <label for="fotoBanner2" class="form-label">fotoBanner2</label>
+              <input type="text" formControlName="fotoBanner2"class="form-control" id="fotoBanner2" aria-describedby="fotoBanner2">
+              <div id="fotoBanner2" class="form-text">Debe Agregar su foto para el Segundo Banner.</div>
+            </div>
+           
+            <div class="mb-3">
+          
+              <label for="fotoBanner3" class="form-label">fotoBanner3</label>
+              <input type="text" formControlName="fotoBanner3"class="form-control" id="fotoBanner3" aria-describedby="fotoBanner3">
+              <div id="fotoBanner3" class="form-text">Debe Agregar su foto para el Tercer Banner.</div>
+            </div>
+            
   
           </form> 
         </div>

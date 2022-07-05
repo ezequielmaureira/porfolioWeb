@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 import { UserModel } from 'src/app/Models/Usuario';
 import { PorfolioService } from 'src/app/porfolio.service';
@@ -9,21 +10,16 @@ import { PorfolioService } from 'src/app/porfolio.service';
 })
 export class HeaderComponent implements OnInit {
   datosUsuario!:UserModel;
-  usuarioModel:UserModel=new UserModel
-  userLogged=this.authService.getUserLogged();
-  
-  usuario={
-  email:'',
-  clave:''
-  }
   NoMostrarLogin!:boolean;
+  usuario={ email:'',clave:''    }
+  userLogged=this.authService.getUserLogged();
+    
   constructor(private authService:AuthService, private api:PorfolioService) { }
 
   ngOnInit(): void {
-
+    this.mostrarUsuario(this.datosUsuario);
     this.NoMostrarLogin=true;
   }
-
 
   Registrar(){
     console.log(this.usuario);

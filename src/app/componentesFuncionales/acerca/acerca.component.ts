@@ -15,11 +15,11 @@ import { PorfolioService } from 'src/app/porfolio.service';
 export class AcercaComponent implements OnInit {
 
 
-
-  userLogged=this.authService.getUserLogged();
-  formUsuario!:FormGroup;
   usuarioModel:UserModel=new UserModel
   datosUsuario!:UserModel;
+  userLogged=this.authService.getUserLogged();
+  formUsuario!:FormGroup;
+ 
  
   
    
