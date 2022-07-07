@@ -24,17 +24,17 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue=this.creadorForm.group({
-        id:[''],
-        inicio:[''],
-        fin:[''],
-        empresa:[''],
-        puesto:[''],
-        actividad:['']
+        idExperiencia:[''],
+        inicioExperiencia:[''],
+        finExperiencia:[''],
+        empresaExperiencia:[''],
+        puestoExperiencia:[''],
+        actividadExperiencia:['']
 
 
     })
     this.mostrarExperiencia(this.datosExperiencia);
-
+  
 
   }
 
@@ -47,12 +47,12 @@ export class ExperienciaComponent implements OnInit {
   
   agregaExperiencia(){
 
-  this.ExperienciaModel.id=this.formValue.value.id;
-  this.ExperienciaModel.inicio=this.formValue.value.inicio;
-  this.ExperienciaModel.fin=this.formValue.value.fin;
-  this.ExperienciaModel.empresa=this.formValue.value.empresa;
-  this.ExperienciaModel.puesto=this.formValue.value.puesto;
-  this.ExperienciaModel.actividad=this.formValue.value.actividad;
+  this.ExperienciaModel.idExp=this.formValue.value.idExperiencia;
+  this.ExperienciaModel.inicioExp=this.formValue.value.inicioExperiencia;
+  this.ExperienciaModel.finExp=this.formValue.value.finExperiencia;
+  this.ExperienciaModel.empresaExp=this.formValue.value.empresaExperiencia;
+  this.ExperienciaModel.puestoExp=this.formValue.value.puestoExperiencia;
+  this.ExperienciaModel.actividadExp=this.formValue.value.actividadExperiencia;
 
  this.api.agregarExperiencia(this.ExperienciaModel).subscribe(data=>{
 
@@ -107,7 +107,7 @@ this.mostrarActualizar=true;
  this.mostrarAgregar=false; 
 
   
-   this.ExperienciaModel.id=row.id;
+   this.ExperienciaModel.idExp=row.id;
    this.formValue.controls["inicio"].setValue(row.inicio);
    this.formValue.controls["fin"].setValue(row.fin);
    this.formValue.controls["empresa"].setValue(row.empresa);
@@ -118,13 +118,13 @@ this.mostrarActualizar=true;
  
 
 actualizarExperiencia(){
-this.ExperienciaModel.inicio=this.formValue.value.inicio;
-this.ExperienciaModel.fin=this.formValue.value.fin;
-this.ExperienciaModel.empresa=this.formValue.value.empresa;
-this.ExperienciaModel.puesto=this.formValue.value.puesto;
-this.ExperienciaModel.actividad=this.formValue.value.actividad;
+this.ExperienciaModel.inicioExp=this.formValue.value.inicioExperiencia;
+this.ExperienciaModel.finExp=this.formValue.value.finExperiencia;
+this.ExperienciaModel.empresaExp=this.formValue.value.empresaExperiencia;
+this.ExperienciaModel.puestoExp=this.formValue.value.puestoExperiencia;
+this.ExperienciaModel.actividadExp=this.formValue.value.actividadExperienciaS;
 
-this.api.actualizarExperiencia(this.ExperienciaModel,this.ExperienciaModel.id)
+this.api.actualizarExperiencia(this.ExperienciaModel,this.ExperienciaModel.idExp)
 .subscribe(res=>{
 
 let ref=document.getElementById('cancel')

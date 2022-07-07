@@ -10,27 +10,30 @@ import { PorfolioService } from 'src/app/porfolio.service';
 })
 export class HeaderComponent implements OnInit {
   datosUsuario!:UserModel;
-  NoMostrarLogin!:boolean;
-  usuario={ email:'',clave:''    }
+  NoMostrarLogin:boolean=true;
+  usuario={ email:'',clave:'' }
   userLogged=this.authService.getUserLogged();
     
   constructor(private authService:AuthService, private api:PorfolioService) { }
 
   ngOnInit(): void {
     this.mostrarUsuario(this.datosUsuario);
-    this.NoMostrarLogin=true;
-  }
-
-  Registrar(){
+    
+   }
+   Registrar(){
     console.log(this.usuario);
     const {email,clave}=this.usuario;
     this.authService.register(email,clave).then(res=>{  
-      console.log("usted esta registrado:",res)
-      alert("usted se Registro con su email:"+email);
-     
-    })
+      
+      console.log("usted esta Registrado:",res)
+      
   
+    })
+     
     }
+   
+   
+
 
   Ingresar(){
   console.log(this.usuario);
@@ -38,12 +41,13 @@ export class HeaderComponent implements OnInit {
   this.authService.login(email,clave).then(res=>{  
     
     console.log("usted esta logueado:",res)
-    alert("usted esta Logueado con su email:"+email);
-    this.NoMostrarLogin=false;
+   this.NoMostrarLogin=false;
+    
+    
     
 
   })
-
+   
   }
   IngresarConGoogle(){
    
@@ -58,7 +62,7 @@ export class HeaderComponent implements OnInit {
     }
     ObtenerUsuario(){
     this.authService.getUserLogged().subscribe(res=>{
-
+     
 
       console.log(res?.email)
     });
@@ -66,6 +70,7 @@ export class HeaderComponent implements OnInit {
     }
     Logout(){
       this.authService.logout();
+     
       window.location.reload()
 
 
@@ -78,4 +83,6 @@ export class HeaderComponent implements OnInit {
     
       })
     }
+
+   
 }

@@ -2,12 +2,12 @@
 
 export class ExpModel {
 
-    id:number=0;
-    inicio:number=0;
-    fin:number=0;
-    empresa:string="";
-    puesto:string="";
-    actividad:string="";
+    idExp:number=0;
+    inicioExp:number=0;
+    finExp:number=0;
+    empresaExp:string="";
+    puestoExp:string="";
+    actividadExp:string="";
     
     
     

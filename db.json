@@ -18,7 +18,15 @@
     }
   ],
   "Experiencia": [],
-  "Educacion": [],
+  "Educacion": [
+    {
+      "id": 1,
+      "inicio": "2022",
+      "fin": "2030",
+      "institucion": "domingo savio",
+      "titulo": "perito mercantil"
+    }
+  ],
   "Competencia": [
     {
       "id": 4,

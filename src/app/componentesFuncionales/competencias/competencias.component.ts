@@ -11,12 +11,7 @@ import { compModel } from './competenciasModel';
 })
 export class CompetenciasComponent  {
    userLogged=this.authService.getUserLogged();
-
-  usuario={
-    email:'',
-    clave:''
-    }
-
+ 
   formValue!:FormGroup;
   CompetenciasModel:compModel=new compModel();
   datosCompetencia!:any;

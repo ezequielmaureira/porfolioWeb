@@ -5,7 +5,7 @@ import firebase from 'firebase/compat/app';
   providedIn: 'root'
 })
 export class AuthService {
-
+  
   constructor(private afauth:AngularFireAuth) { 
   }
 
@@ -29,7 +29,10 @@ export class AuthService {
 
   
  async login(email:string, clave:string){
+  
+  
  try{
+  
 return await this.afauth.signInWithEmailAndPassword(email,clave);
 
 
@@ -41,6 +44,7 @@ catch(err){
  }
 
  async loginWithGoogle(email:string, clave:string){
+  
   try{
  return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
  
