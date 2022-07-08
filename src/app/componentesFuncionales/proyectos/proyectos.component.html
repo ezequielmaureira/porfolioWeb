@@ -26,8 +26,8 @@
         <tr>
         
         <th scope="col">Proyecto</th>
-        <th scope="col">Año Proyecto</th>
-        <th scope="col">Mes Proyecto </th>
+        <th scope="col">Mes Proyecto</th>
+        <th scope="col">Año Proyecto </th>
         <th scope="col">Descripcion Proyecto</th>
         <th scope="col">Link Proyecto</th>
         
@@ -44,8 +44,9 @@
        
      
         <td>{{row.nombreProyecto}}</td>
-        <td>{{row.anoProyecto}}</td>
+        
         <td>{{row.mesProyecto}}</td>
+        <td>{{row.anoProyecto}}</td>
         <td>{{row.descripcionProyecto}}</td>
         <td>{{row.linkProyecto}}</td>
 
@@ -111,7 +112,7 @@
               <div class="mb-3">
             
                 <label for="año" class="form-label">Año de Proyecto</label>
-                <input type="text" formControlName="año" class="form-control" id="a" aria-describedby="an">
+                <input type="text" formControlName="ano" class="form-control" id="a" aria-describedby="an">
                 <div id="anio" class="form-text">Debe Agregar año Proyecto</div>
               </div>
               <div class="mb-3">

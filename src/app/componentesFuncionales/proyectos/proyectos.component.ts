@@ -26,7 +26,7 @@ this.formValue=this.creadorForm.group({
 
 id:[''],
 nombre:[''],
-año:[''],
+ano:[''],
 mes:[''],
 descripcion:[''],
 link:['']
@@ -43,7 +43,7 @@ console.log(this.datosProyecto)
 
 this.formValue.reset();
 this.mostrarActualizar=false;
-this.mostrarActualizar=true;
+this.mostrarAgregar=true;
 
 
   }
@@ -54,7 +54,7 @@ agregaProyecto(){
 
   this.ProyectoModel.idProyecto=this.formValue.value.id;
   this.ProyectoModel.nombreProyecto=this.formValue.value.nombre;
-  this.ProyectoModel.añoProyecto=this.formValue.value.año;
+  this.ProyectoModel.anoProyecto=this.formValue.value.ano;
   this.ProyectoModel.mesProyecto=this.formValue.value.mes;
   this.ProyectoModel.descripcionProyecto=this.formValue.value.descripcion;
   this.ProyectoModel.linkProyecto=this.formValue.value.link;
@@ -115,7 +115,7 @@ this.mostrarActualizar=true;
   
    this.ProyectoModel.idProyecto=row.idProyecto;
    this.formValue.controls["nombre"].setValue(row.nombreProyecto);
-   this.formValue.controls["año"].setValue(row.añoProyecto);
+   this.formValue.controls["ano"].setValue(row.anoProyecto);
    this.formValue.controls["mes"].setValue(row.mesProyecto);
    this.formValue.controls["descripcion"].setValue(row.descripcionProyecto);
    this.formValue.controls["link"].setValue(row.linkProyecto);
@@ -126,7 +126,7 @@ this.mostrarActualizar=true;
 
 actualizarProyecto(){
 this.ProyectoModel.nombreProyecto=this.formValue.value.nombre;
-this.ProyectoModel.añoProyecto=this.formValue.value.año;
+this.ProyectoModel.anoProyecto=this.formValue.value.ano;
 this.ProyectoModel.mesProyecto=this.formValue.value.mes;
 this.ProyectoModel.descripcionProyecto=this.formValue.value.descripcion;
 this.ProyectoModel.linkProyecto=this.formValue.value.link;

@@ -25,7 +25,8 @@
 
       <thead>
       <tr>
-      <th scope="col">Nombre Competencia</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
       <th scope="col">Grado Conocimiento</th>
        
           
@@ -39,9 +40,10 @@
       <tbody >
 
   <tr *ngFor="let row of datosCompetencia">
-
+    <td ><img  class="img" width="50px" src={{row.foto}}></td>
       <td>{{row.nombre}}</td>
-      <td>{{row.grado}}</td>
+      <td>{{row.grado}} % </td>
+
       
      
   
@@ -109,6 +111,13 @@
               <label for="grado" class="form-label">Grado de conocimiento</label>
               <input type="text" formControlName="grado" class="form-control" id="grado" aria-describedby="grado">
               <div id="grado" class="form-text">Debe Agregar Grado de conocimiento de la competencia</div>
+            </div>
+
+            <div class="mb-3">
+          
+              <label for="foto" class="form-label">Logo Competencia</label>
+              <input type="text" formControlName="foto" class="form-control" id="foto" aria-describedby="foto">
+              <div id="fot" class="form-text">Debe Logo Imagen competencia</div>
             </div>
            
           

@@ -27,6 +27,7 @@ export class CompetenciasComponent  {
         id:[''],
         nombre:[''],
         grado:[''],
+        foto:[''],
         
        
 
@@ -51,6 +52,7 @@ export class CompetenciasComponent  {
   this.CompetenciasModel.id=this.formValue.value.id;
   this.CompetenciasModel.nombre=this.formValue.value.nombre;
   this.CompetenciasModel.grado=this.formValue.value.grado;
+  this.CompetenciasModel.foto=this.formValue.value.foto;
   
 
  this.api.agregarCompetencia(this.CompetenciasModel).subscribe(data=>{
@@ -106,6 +108,7 @@ this.mostrarActualizar=true;
    this.CompetenciasModel.id=row.id;
    this.formValue.controls["nombre"].setValue(row.nombre);
    this.formValue.controls["grado"].setValue(row.grado);
+   this.formValue.controls["foto"].setValue(row.foto);
     
    console.log(row)
 }
@@ -114,6 +117,7 @@ this.mostrarActualizar=true;
 actualizarCompetencia(){
 this.CompetenciasModel.nombre=this.formValue.value.nombre;
 this.CompetenciasModel.grado=this.formValue.value.grado;
+this.CompetenciasModel.foto=this.formValue.value.foto;
 
 
 this.api.actualizarCompetencia(this.CompetenciasModel,this.CompetenciasModel.id)
