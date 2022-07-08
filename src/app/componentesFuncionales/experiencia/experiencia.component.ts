@@ -12,7 +12,6 @@ import { ExpModel } from './experiencia';
 export class ExperienciaComponent implements OnInit {
 
   userLogged=this.authService.getUserLogged();
-
   formValue!:FormGroup;
   ExperienciaModel:ExpModel=new ExpModel();
   datosExperiencia!:any;
@@ -24,17 +23,19 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue=this.creadorForm.group({
-        idExperiencia:[''],
-        inicioExperiencia:[''],
-        finExperiencia:[''],
-        empresaExperiencia:[''],
-        puestoExperiencia:[''],
-        actividadExperiencia:['']
+        id:[''],
+        inicio:[''],
+        fin:[''],
+        empresa:[''],
+        puesto:[''],
+        actividad:[''],
+        foto:['']
 
 
     })
+    
     this.mostrarExperiencia(this.datosExperiencia);
-  
+   
 
   }
 
@@ -47,12 +48,13 @@ export class ExperienciaComponent implements OnInit {
   
   agregaExperiencia(){
 
-  this.ExperienciaModel.idExp=this.formValue.value.idExperiencia;
-  this.ExperienciaModel.inicioExp=this.formValue.value.inicioExperiencia;
-  this.ExperienciaModel.finExp=this.formValue.value.finExperiencia;
-  this.ExperienciaModel.empresaExp=this.formValue.value.empresaExperiencia;
-  this.ExperienciaModel.puestoExp=this.formValue.value.puestoExperiencia;
-  this.ExperienciaModel.actividadExp=this.formValue.value.actividadExperiencia;
+  this.ExperienciaModel.idExp=this.formValue.value.id;
+  this.ExperienciaModel.inicioExp=this.formValue.value.inicio;
+  this.ExperienciaModel.finExp=this.formValue.value.fin;
+  this.ExperienciaModel.empresaExp=this.formValue.value.empresa;
+  this.ExperienciaModel.puestoExp=this.formValue.value.puesto;
+  this.ExperienciaModel.actividadExp=this.formValue.value.actividad;
+  this.ExperienciaModel.fotoExp=this.formValue.value.foto;
 
  this.api.agregarExperiencia(this.ExperienciaModel).subscribe(data=>{
 
@@ -62,7 +64,7 @@ let ref=document.getElementById('cancel')
  ref?.click();
  this.mostrarExperiencia=data;
  this.formValue.reset();
-
+ window.location.reload()
 
 
  },
@@ -78,7 +80,7 @@ mostrarExperiencia(data:any){
   this.api.obtenerExperiencia().subscribe(data=>{
 
 this.datosExperiencia=data;
-
+console.log(this.datosExperiencia);
   })
 
 
@@ -95,7 +97,7 @@ eliminarExperiencia(id:any){
 
   })
 
-
+  window.location.reload()
  
 
 
@@ -107,22 +109,24 @@ this.mostrarActualizar=true;
  this.mostrarAgregar=false; 
 
   
-   this.ExperienciaModel.idExp=row.id;
-   this.formValue.controls["inicio"].setValue(row.inicio);
-   this.formValue.controls["fin"].setValue(row.fin);
-   this.formValue.controls["empresa"].setValue(row.empresa);
-   this.formValue.controls["puesto"].setValue(row.puesto);
-   this.formValue.controls["actividad"].setValue(row.actividad);
-   console.log(row)
+   this.ExperienciaModel.idExp=row.idExp;
+   this.formValue.controls["inicio"].setValue(row.inicioExp);
+   this.formValue.controls["fin"].setValue(row.finExp);
+   this.formValue.controls["empresa"].setValue(row.empresaExp);
+   this.formValue.controls["puesto"].setValue(row.puestoExp);
+   this.formValue.controls["actividad"].setValue(row.actividadExp);
+   this.formValue.controls["foto"].setValue(row.fotoExp);
+   console.log(row.idExp)
 }
  
 
 actualizarExperiencia(){
-this.ExperienciaModel.inicioExp=this.formValue.value.inicioExperiencia;
-this.ExperienciaModel.finExp=this.formValue.value.finExperiencia;
-this.ExperienciaModel.empresaExp=this.formValue.value.empresaExperiencia;
-this.ExperienciaModel.puestoExp=this.formValue.value.puestoExperiencia;
-this.ExperienciaModel.actividadExp=this.formValue.value.actividadExperienciaS;
+this.ExperienciaModel.inicioExp=this.formValue.value.inicio;
+this.ExperienciaModel.finExp=this.formValue.value.fin;
+this.ExperienciaModel.empresaExp=this.formValue.value.empresa;
+this.ExperienciaModel.puestoExp=this.formValue.value.puesto;
+this.ExperienciaModel.actividadExp=this.formValue.value.actividad;
+this.ExperienciaModel.fotoExp=this.formValue.value.foto;
 
 this.api.actualizarExperiencia(this.ExperienciaModel,this.ExperienciaModel.idExp)
 .subscribe(res=>{

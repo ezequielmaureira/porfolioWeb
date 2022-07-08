@@ -46,10 +46,10 @@
   
     <tr *ngFor="let row of datosEducacion">
 
-        <td>{{row.inicio}}</td>
-        <td>{{row.fin}}</td>
-        <td>{{row.institucion}}</td>
-        <td>{{row.titulo}}</td>
+        <td>{{row.inicioEdu}}</td>
+        <td>{{row.finEdu}}</td>
+        <td>{{row.institucionEdu}}</td>
+        <td>{{row.tituloEdu}}</td>
        
     
     <td>
@@ -58,7 +58,7 @@
    
     <td>
   
-      <button (click)="eliminarEducacion(row.id)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <button (click)="eliminarEducacion(row.idEdu)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
       
     </td>
     

@@ -61,7 +61,7 @@ let ref=document.getElementById('cancel')
  ref?.click();
  this.mostrarCompetencia=data;
  this.formValue.reset();
-
+ window.location.reload()
 
 
  },
@@ -91,7 +91,7 @@ eliminarCompetencia(id:any){
 
   })
 
-
+  window.location.reload()
  
 
 

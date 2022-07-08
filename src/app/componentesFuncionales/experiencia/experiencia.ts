@@ -8,6 +8,7 @@ export class ExpModel {
     empresaExp:string="";
     puestoExp:string="";
     actividadExp:string="";
+    fotoExp:string="";
     
     
     

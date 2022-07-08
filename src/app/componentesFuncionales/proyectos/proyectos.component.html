@@ -1,1 +1,153 @@
-<p>proyectos works!</p>
+
+<div class="container-fluid">
+ 
+  
+
+
+    <div class="header">
+      
+      <div class="cabecera">
+        <nav class="navbar">
+            <h1>Proyectos</h1>
+          <button type="button"   (click)="clickNuevoProyecto()" *ngIf="userLogged|async as user"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#proyectoModal">
+          
+          Nuevo Proyecto </button>
+      
+                     
+  
+          
+        </nav>
+  
+  
+      
+      <table class="table" >
+  
+        <thead>
+        <tr>
+        
+        <th scope="col">Proyecto</th>
+        <th scope="col">Año Proyecto</th>
+        <th scope="col">Mes Proyecto </th>
+        <th scope="col">Descripcion Proyecto</th>
+        <th scope="col">Link Proyecto</th>
+        
+        
+        </tr>
+        </thead>
+  
+  
+  
+        
+        <tbody >
+
+    <tr class="info" *ngFor="let row of datosProyecto">
+       
+     
+        <td>{{row.nombreProyecto}}</td>
+        <td>{{row.anoProyecto}}</td>
+        <td>{{row.mesProyecto}}</td>
+        <td>{{row.descripcionProyecto}}</td>
+        <td>{{row.linkProyecto}}</td>
+
+    
+    <td>
+      <button type="button" (click)="editarProyecto(row)" *ngIf="userLogged|async as user"class="boton" data-bs-toggle="modal" data-bs-target="#proyectoModal"> <i class="fa-solid fa-pen"></i></button>
+    </td>
+   
+    <td>
+  
+      <button (click)="eliminarProyecto(row.idProyecto)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      
+    </td>
+    
+  
+  
+  
+  
+  
+    </tr>
+  
+        </tbody>
+        
+        
+        
+     
+        
+        
+        
+        
+        </table>
+  
+      </div>
+  
+  
+        
+    </div>
+  
+  
+     
+  </div>
+  
+  
+
+  
+  
+  <!-- Modal Proyecto -->
+  <div class="modal fade" id="proyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="proyectoModal">Proyecto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue" class="row g-3 needs-validation" novalidate>
+            <div class="mb-3">
+            
+                <label for="nombre" class="form-label">Nombre de Proyecto</label>
+                <input type="text" formControlName='nombre' class="form-control" id="no" required>
+                <div id="nom" class="form-text">Debe Agregar Nombre de Proyecto</div>
+              </div>
+              <div class="mb-3">
+            
+                <label for="año" class="form-label">Año de Proyecto</label>
+                <input type="text" formControlName="año" class="form-control" id="a" aria-describedby="an">
+                <div id="anio" class="form-text">Debe Agregar año Proyecto</div>
+              </div>
+              <div class="mb-3">
+            
+            
+            
+              <label for="mes" class="form-label">Mes</label>
+              <input type="text" formControlName="mes" class="form-control" id="m" aria-describedby="ms">
+              <div id="mes" class="form-text">Debe Agregar mes de Proyecto</div>
+            </div>
+            <div class="mb-3">
+              <label for="Descripcion" class="form-label">Descripcion</label>
+              <input type="text"formControlName="descripcion" class="form-control" id="desc" aria-describedby="Decripcion">
+              <div id="Desc" class="form-text">Debe Agregar Descripcion de Proyecto</div>
+            </div>
+            <div class="mb-3">
+          
+              <label for="link" class="form-label">Link </label>
+              <textarea type="text" formControlName="link"class="form-control" id="link" aria-describedby="link"></textarea>
+              <div id="li" class="form-text">Debe Agregar el link del Proyecto</div>
+            </div>
+                     
+  
+          </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" data-bs-dismiss="modal"
+          (click)="agregaProyecto()" *ngIf="mostrarAgregar"
+          class="btn btn-primary">agregar Proyecto</button>
+          <button type="submit" 
+          (click)="actualizarProyecto()" *ngIf="mostrarActualizar"
+          class="btn btn-primary"data-bs-dismiss="modal"   >Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

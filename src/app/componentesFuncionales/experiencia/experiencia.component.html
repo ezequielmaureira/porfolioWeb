@@ -8,7 +8,7 @@
       
       <div class="cabecera">
         <nav class="navbar">
-            <h1>Experiencia</h1>
+            <h1>Experiencia Laboral</h1>
           <button type="button"   (click)="clickNuevaEmpresa()" *ngIf="userLogged|async as user"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#empresaModal">
           
           Nueva Empresa </button>
@@ -20,19 +20,15 @@
   
   
       
-      <table class="table">
+      <table class="table" >
   
         <thead>
         <tr>
+        <th scope="col"></th> 
         <th scope="col">Año Inicio</th>
         <th scope="col">Año Finalizacion</th>
-  
-        
         <th scope="col">Empresa </th>
-        
         <th scope="col">Puesto</th>
-        
-        
         <th scope="col">Actividades realizadas</th>
         
         
@@ -43,14 +39,16 @@
   
         
         <tbody >
-  
-    <tr *ngFor="let row of datosExperiencia">
 
-        <td>{{row.inicioExperiencia}}</td>
-        <td>{{row.finExperiencia}}</td>
-        <td>{{row.empresaExperiencia}}</td>
-        <td>{{row.puestoExperiencia}}</td>
-        <td>{{row.actividadExperiencia}}</td>
+    <tr class="info" *ngFor="let row of datosExperiencia">
+       
+        <td ><img  class="img" width="50%" src={{row.fotoExp}}></td> 
+        <td>{{row.inicioExp}}</td>
+        <td>{{row.finExp}}</td>
+        <td>{{row.empresaExp}}</td>
+        <td>{{row.puestoExp}}</td>
+        <td>{{row.actividadExp}}</td>
+
     
     <td>
       <button type="button" (click)="editarExperiencia(row)" *ngIf="userLogged|async as user"class="boton" data-bs-toggle="modal" data-bs-target="#empresaModal"> <i class="fa-solid fa-pen"></i></button>
@@ -58,7 +56,7 @@
    
     <td>
   
-      <button (click)="eliminarExperiencia(row.id)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <button (click)="eliminarExperiencia(row.idExp)"*ngIf="userLogged|async as user" class="boton"><i class="fa fa-times" aria-hidden="true"></i></button>
       
     </td>
     
@@ -68,7 +66,7 @@
   
   
     </tr>
-      
+  
         </tbody>
         
         
@@ -107,13 +105,13 @@
             <div class="mb-3">
             
                 <label for="inicio" class="form-label">Año de Inicio</label>
-                <input type="text" formControlName='inicioExperiencia' class="form-control" id="iniio" required>
+                <input type="text" formControlName='inicio' class="form-control" id="iniio" required>
                 <div id="in" class="form-text">Debe Agregar año de inicio de empleo.</div>
               </div>
               <div class="mb-3">
             
                 <label for="Año2" class="form-label">Año de Finalizacion</label>
-                <input type="text" formControlName="finExperiencia" class="form-control" id="fi" aria-describedby="fin">
+                <input type="text" formControlName="fin" class="form-control" id="fi" aria-describedby="fin">
                 <div id="in" class="form-text">Debe Agregar año de finalizacion de empleo.</div>
               </div>
               <div class="mb-3">
@@ -121,20 +119,28 @@
             
             
               <label for="Empresa" class="form-label">Empresa</label>
-              <input type="text" formControlName="empresaExperiencia" class="form-control" id="Empres" aria-describedby="Empresa">
+              <input type="text" formControlName="empresa" class="form-control" id="Empres" aria-describedby="Empresa">
               <div id="Emprsa" class="form-text">Debe Agregar empresa en la que trabajo.</div>
             </div>
             <div class="mb-3">
               <label for="Puesto" class="form-label">Puesto</label>
-              <input type="text"formControlName="puestoExperiencia" class="form-control" id="Puesto" aria-describedby="Puesto">
+              <input type="text"formControlName="puesto" class="form-control" id="Puesto" aria-describedby="Puesto">
               <div id="Puesto" class="form-text">Debe Agregar el cargo que ocupo.</div>
             </div>
             <div class="mb-3">
           
               <label for="Actividad" class="form-label">Actividad </label>
-              <textarea type="text" formControlName="actividadExperiencia"class="form-control" id="Actividad" aria-describedby="Actividad"></textarea>
+              <textarea type="text" formControlName="actividad"class="form-control" id="Actividad" aria-describedby="Actividad"></textarea>
               <div id="Actividad" class="form-text">Debe Agregar las actividades que realizo.</div>
             </div>
+            <div class="mb-3">
+          
+              <label for="Foto" class="form-label">Foto</label>
+              <input type="text" formControlName="foto"class="form-control" id="Foto" aria-describedby="Foto">
+              <div id="fo" class="form-text">Debe Agregar foto de Empresa.</div>
+            </div>
+
+            
   
           </form> 
         </div>
@@ -151,4 +157,3 @@
     </div>
   </div>
 
-  <router-outlet></router-outlet>

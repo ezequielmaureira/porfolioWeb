@@ -1,10 +1,10 @@
 export class eduModel {
 
-    id:number=0;
-    inicio:number=0;
-    fin:number=0;
-    institucion:string="";
-    titulo:string="";
+    idEdu:number=0;
+    inicioEdu:number=0;
+    finEdu:number=0;
+    institucionEdu:string="";
+    tituloEdu:string="";
     
   
     

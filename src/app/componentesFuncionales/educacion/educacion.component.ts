@@ -50,11 +50,11 @@ export class EducacionComponent implements OnInit {
   
   agregaEducacion(){
 
-  this.EducacionModel.id=this.formValue.value.id;
-  this.EducacionModel.inicio=this.formValue.value.inicio;
-  this.EducacionModel.fin=this.formValue.value.fin;
-  this.EducacionModel.institucion=this.formValue.value.institucion;
-  this.EducacionModel.titulo=this.formValue.value.titulo;
+  this.EducacionModel.idEdu=this.formValue.value.id;
+  this.EducacionModel.inicioEdu=this.formValue.value.inicio;
+  this.EducacionModel.finEdu=this.formValue.value.fin;
+  this.EducacionModel.institucionEdu=this.formValue.value.institucion;
+  this.EducacionModel.tituloEdu=this.formValue.value.titulo;
   
 
  this.api.agregarEducacion(this.EducacionModel).subscribe(data=>{
@@ -95,9 +95,11 @@ eliminarEducacion(id:any){
   .subscribe(data=>{
  
     alert("educacion eliminada");
+ 
+    window.location.reload()
+
 
   })
-
 
  
 
@@ -110,24 +112,24 @@ this.mostrarActualizar=true;
  this.mostrarAgregar=false; 
 
   
-   this.EducacionModel.id=row.id;
-   this.formValue.controls["inicio"].setValue(row.inicio);
-   this.formValue.controls["fin"].setValue(row.fin);
-   this.formValue.controls["institucion"].setValue(row.institucion);
-   this.formValue.controls["titulo"].setValue(row.titulo);
+   this.EducacionModel.idEdu=row.idEdu;
+   this.formValue.controls["inicio"].setValue(row.inicioEdu);
+   this.formValue.controls["fin"].setValue(row.finEdu);
+   this.formValue.controls["institucion"].setValue(row.institucionEdu);
+   this.formValue.controls["titulo"].setValue(row.tituloEdu);
   
    console.log(row)
 }
  
 
 actualizarEducacion(){
-this.EducacionModel.inicio=this.formValue.value.inicio;
-this.EducacionModel.fin=this.formValue.value.fin;
-this.EducacionModel.institucion=this.formValue.value.institucion;
-this.EducacionModel.titulo=this.formValue.value.titulo;
+this.EducacionModel.inicioEdu=this.formValue.value.inicio;
+this.EducacionModel.finEdu=this.formValue.value.fin;
+this.EducacionModel.institucionEdu=this.formValue.value.institucion;
+this.EducacionModel.tituloEdu=this.formValue.value.titulo;
 
 
-this.api.actualizarEducacion(this.EducacionModel,this.EducacionModel.id)
+this.api.actualizarEducacion(this.EducacionModel,this.EducacionModel.idEdu)
 .subscribe(res=>{
 
 let ref=document.getElementById('cancel')
@@ -138,7 +140,7 @@ this.mostrarEducacion(res);
 this.formValue.reset(); 
 this.mostrarEducacion(res);
 
-
+window.location.reload()
 })
 
 }

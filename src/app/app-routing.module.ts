@@ -5,7 +5,7 @@ import { VistaComponent } from './componenteVista/vista/vista.component';
 
 const routes: Routes = [
 
-{path:'vista',component:VistaComponent},
+
 
 
 

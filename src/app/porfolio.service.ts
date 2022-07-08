@@ -54,6 +54,7 @@ export class PorfolioService {
 
    return this.http.post<any>(this.apiServerUrl+'/experiencia/crear/',data)
    }
+   
    obtenerExperiencia():Observable<any>{
 
    return this.http.get<any>(this.apiServerUrl+'/experiencia/traer')
