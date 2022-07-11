@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ChartData, ChartEvent, ChartType,ChartConfiguration } from 'chart.js';
 import { AuthService } from 'src/app/auth.service';
 import { PorfolioService } from 'src/app/porfolio.service';
-import { compModel } from './competenciasModel';
+import { compModel } from 'src/app/Models/competenciasModel';
 @Component({
   selector: 'app-competencias',
   templateUrl: './competencias.component.html',

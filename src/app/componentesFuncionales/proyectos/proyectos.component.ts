@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 import { PorfolioService } from 'src/app/porfolio.service';
-import { ProyectModel } from './proyectos';
+import { ProyectModel } from 'src/app/Models/proyectos';
 
 @Component({
   selector: 'app-proyectos',

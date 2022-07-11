@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 import { PorfolioService } from 'src/app/porfolio.service';
-import { eduModel} from './educacionModel';
+import { eduModel } from 'src/app/Models/educacionModel';
 
 @Component({
   selector: 'app-educacion',
