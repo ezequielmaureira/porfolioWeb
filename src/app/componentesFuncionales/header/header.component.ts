@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/Servicios/auth.service';
 import { UserModel } from 'src/app/Models/Usuario';
-import { PorfolioService } from 'src/app/Servicios/porfolio.service';
+import { UsuarioService } from 'src/app/Servicios/usuario.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   usuario={ email:'',clave:'' }
   userLogged=this.authService.getUserLogged();
     
-  constructor(private authService:AuthService, private api:PorfolioService) { }
+  constructor(private authService:AuthService, private api:UsuarioService) { }
 
   ngOnInit(): void {
     this.mostrarUsuario(this.datosUsuario);

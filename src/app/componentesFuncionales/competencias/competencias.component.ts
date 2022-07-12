@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ChartData, ChartEvent, ChartType,ChartConfiguration } from 'chart.js';
 import { AuthService } from 'src/app/Servicios/auth.service';
-import { PorfolioService } from 'src/app/Servicios/porfolio.service';
+
 import { compModel } from 'src/app/Models/competenciasModel';
 import { CompetenciaService } from 'src/app/Servicios/competencia.service';
 @Component({

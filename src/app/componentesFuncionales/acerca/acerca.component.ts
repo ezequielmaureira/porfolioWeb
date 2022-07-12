@@ -3,7 +3,7 @@ import { Form, FormGroup, FormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/Servicios/auth.service';
 import { UserModel } from 'src/app/Models/Usuario';
-import { PorfolioService } from 'src/app/Servicios/porfolio.service';
+import { UsuarioService } from 'src/app/Servicios/usuario.service';
 
 
 
@@ -23,7 +23,7 @@ export class AcercaComponent implements OnInit {
  
   
    
-  constructor(private creadorForm:FormBuilder,private api:PorfolioService,private authService:AuthService) { }
+  constructor(private creadorForm:FormBuilder,private api:UsuarioService,private authService:AuthService) { }
 
   ngOnInit(): void {
    

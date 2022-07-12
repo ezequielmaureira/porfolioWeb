@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/Servicios/auth.service';
-import { PorfolioService } from 'src/app/Servicios/porfolio.service';
+
 import { eduModel } from 'src/app/Models/educacionModel';
 import { EducacionService } from 'src/app/Servicios/educacion.service';
 
