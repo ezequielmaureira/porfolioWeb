@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';
-import { PorfolioService } from 'src/app/porfolio.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
+import { PorfolioService } from 'src/app/Servicios/porfolio.service';
 import { ProyectModel } from 'src/app/Models/proyectos';
+import { ProyectoService } from 'src/app/Servicios/proyecto.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -18,7 +19,7 @@ export class ProyectosComponent implements OnInit {
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
 
-  constructor(private creadorForm:FormBuilder, private api:PorfolioService, private authService:AuthService) {}
+  constructor(private creadorForm:FormBuilder, private api:ProyectoService, private authService:AuthService) {}
 
   ngOnInit(): void {
 

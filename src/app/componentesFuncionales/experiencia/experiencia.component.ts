@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';
-import { PorfolioService } from 'src/app/porfolio.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
+import { PorfolioService } from 'src/app/Servicios/porfolio.service';
 import { ExpModel } from 'src/app/Models/experiencia';
+import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -18,7 +19,7 @@ export class ExperienciaComponent implements OnInit {
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
   
-   constructor(private creadorForm:FormBuilder,private api:PorfolioService,private authService:AuthService){}
+   constructor(private creadorForm:FormBuilder,private api:ExperienciaService,private authService:AuthService){}
 
 
   ngOnInit(): void {

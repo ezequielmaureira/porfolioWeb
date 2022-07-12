@@ -10,7 +10,7 @@ import { EducacionComponent } from './componentesFuncionales/educacion/educacion
 import { CompetenciasComponent } from './componentesFuncionales/competencias/competencias.component';
 import { ProyectosComponent } from './componentesFuncionales/proyectos/proyectos.component';
 import { VistaComponent } from './componenteVista/vista/vista.component';
-import { PorfolioService } from './porfolio.service';
+import { PorfolioService } from './Servicios/porfolio.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgChartsModule } from 'ng2-charts';

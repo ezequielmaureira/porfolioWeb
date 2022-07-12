@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';
-import { PorfolioService } from 'src/app/porfolio.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
+import { PorfolioService } from 'src/app/Servicios/porfolio.service';
 import { eduModel } from 'src/app/Models/educacionModel';
+import { EducacionService } from 'src/app/Servicios/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -20,7 +21,7 @@ export class EducacionComponent implements OnInit {
   mostrarActualizar!:boolean;
   mostrarAgregar!:boolean;
   
-   constructor(private creadorForm:FormBuilder,private api:PorfolioService ,private authService:AuthService){}
+   constructor(private creadorForm:FormBuilder,private api:EducacionService ,private authService:AuthService){}
 
 
   ngOnInit(): void {
@@ -66,7 +67,7 @@ let ref=document.getElementById('cancel')
  this.mostrarEducacion=data;
  this.formValue.reset();
 
-
+ window.location.reload()
 
  },
  err=>{
