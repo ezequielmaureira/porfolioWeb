@@ -1,0 +1,25 @@
+[debug] [2022-07-13T11:35:30.736Z] ----------------------------------------------------------------------
+[debug] [2022-07-13T11:35:30.739Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eze\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-07-13T11:35:30.740Z] CLI Version:   11.2.2
+[debug] [2022-07-13T11:35:30.740Z] Platform:      win32
+[debug] [2022-07-13T11:35:30.740Z] Node Version:  v16.14.0
+[debug] [2022-07-13T11:35:30.751Z] Time:          Wed Jul 13 2022 08:35:30 GMT-0300 (hora estándar de Argentina)
+[debug] [2022-07-13T11:35:30.752Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-13T11:35:30.892Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-13T11:35:30.893Z] > authorizing via signed-in user (ezequiel.maureira@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Eze\Desktop\porfolioWeb
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

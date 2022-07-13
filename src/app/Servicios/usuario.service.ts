@@ -26,15 +26,7 @@ export class UsuarioService {
    public updateUser( obj:UserModel,id:number){
    return this.http.put(this.apiServerUrl+'/usuario/editar/'+id,obj);
    }
-   
-
-  
-
-
-
-
-}
-
+  }
 
 
 
