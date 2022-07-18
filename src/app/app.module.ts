@@ -17,6 +17,7 @@ import { NgChartsModule } from 'ng2-charts';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { AngularFireModule } from '@angular/fire/compat';
+import { FooterComponent } from './componentesfuncionales/footer/footer.component';
 
 
 const firebaseConfig = {
@@ -39,6 +40,7 @@ const firebaseConfig = {
     EducacionComponent,
     CompetenciasComponent,
     ProyectosComponent,
+    FooterComponent,
   
    
   
