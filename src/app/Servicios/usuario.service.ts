@@ -13,7 +13,7 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
 export class UsuarioService {
   
   
-  private apiServerUrl='http://localhost:8080';
+  private apiServerUrl='https://backendzeze.herokuapp.com';
 
 
   constructor(private http:HttpClient) { }

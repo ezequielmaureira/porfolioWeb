@@ -8,7 +8,7 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
   providedIn: 'root'
 })
 export class ProyectoService {
-  private apiServerUrl='http://localhost:8080';
+  private apiServerUrl='https://backendzeze.herokuapp.com';
   constructor(private http:HttpClient) { }
 
 
